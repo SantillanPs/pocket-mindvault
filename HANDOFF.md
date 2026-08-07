@@ -16,7 +16,7 @@ Session state lives here, on disk — never only in the AI's memory. Read at eve
 
 ## Last Known State
 
-- (where things stand at the end of the last session, dated)
+- 2026-08-08: Vault bootstrapped from replication spec (commit 7886933). Healthcheck ported to bash (scripts/healthcheck.sh) since PowerShell is unavailable on this device; ps1 kept for Windows hosts. index.md placeholder removed so the healthcheck passes on a fresh vault. Healthcheck verified exit 0.
 
 ## Waiting On User
 

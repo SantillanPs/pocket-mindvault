@@ -195,7 +195,7 @@ Before modifying any file:
 
 1. **Read this file first.** Always.
 2. **Read HANDOFF.md.** Always, immediately after this file. Open with a "previously on MindVault" recap: open problems, their last known state, and what is waiting on the User. The recap is read from HANDOFF.md, never from memory.
-3. **Run the healthcheck first.** Run `scripts/healthcheck.ps1` before any problem work. A non-zero exit means REPAIR MODE: acknowledge and fix the gap (missing log entries, missing transcripts, uncommitted work) before proposing anything new. Also check `wiki/predictions.md` for overdue predictions and surface them in the recap, along with solutions whose recheck date has passed.
+3. **Run the healthcheck first.** Run `scripts/healthcheck.sh` before any problem work (PowerShell port `scripts/healthcheck.ps1` exists for Windows hosts). A non-zero exit means REPAIR MODE: acknowledge and fix the gap (missing log entries, missing transcripts, uncommitted work) before proposing anything new. Also check `wiki/predictions.md` for overdue predictions and surface them in the recap, along with solutions whose recheck date has passed.
 4. **Lazy-load.** Don't read solution files or archives eagerly. Load them on-demand when needed.
 5. **Bootstrap sync.** Scan the startup context for unlogged past conversations. If there were significant sessions, read their transcripts from `wiki/archive/raw/transcripts/`, summarize them, and write them to `log.md`. Mention the synced entries in your first response.
 

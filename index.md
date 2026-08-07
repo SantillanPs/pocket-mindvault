@@ -4,4 +4,4 @@ Auto-generated from YAML frontmatter of active wiki pages.
 
 ## Solutions
 
-* [[wiki/solutions/<slug>|<Title>]]: <problem frontmatter text>. Fix: <one-line fix summary>.
+_(none yet - this section regenerates from solution files as they are saved)_
