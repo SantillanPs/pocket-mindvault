@@ -8,10 +8,11 @@ This document defines how the MindVault works and how the AI operates. Any AI se
 
 The MindVault exists so that the User can become better — optimize growth, learning, career, and life. That is the main purpose. Everything in this vault serves it.
 
-The vault serves it through two methods:
+The vault serves it through three methods:
 
 1. **Solve** — the problem-solving machine. You have a problem → AI researches solutions → You pick what works → AI saves it permanently. Full workflow below. Fixing things makes better.
 2. **Reflect** — the thinking mirror. Weekly numbers → the mirror shows patterns plainly → suggests one small thing to try → checks follow-through. Full workflow below. Clarity makes better.
+3. **Navigate** — entering a domain the User doesn't know without getting lost. Map it, get the words, ask the right questions. Full workflow below. Knowing what you don't know makes better.
 
 ### What "better" means
 
@@ -31,6 +32,7 @@ The vault is designed so that new methods can be added later without restructuri
 wiki/
   solutions/     ← One file per solved problem (Solve method)
   reflect/       ← The thinking mirror: weekly numbers, suggestions, pattern reports
+  navigate/      ← Entering unknown domains: the method, plus a library of domain maps
   dormant/       ← Unvalidated research, awaiting validation or recurrence
   archive/       ← Everything from the old vault, preserved as-is
   [new-purpose]/ ← Easy to add later without restructuring
@@ -148,6 +150,32 @@ The report speaks plainly. It never punishes. It ends with what to try.
 
 ---
 
+## Core Workflow: Navigate
+
+The third method — entering a domain the User doesn't know without getting lost. Its only job: convert "I don't know what I don't know" into "I know what I don't know," which is manageable.
+
+When the User enters an unfamiliar domain (a new field, tool, system, or role), run this:
+
+### 1. Ask for the questions first
+
+Ask the User, or research: "what should I be asking about this?" — surface the unknown unknowns before anything else.
+
+### 2. Build the domain map
+
+In one focused session, build the map and save it to `wiki/navigate/maps/[domain].md`: the core vocabulary (~30 terms, plain meanings), the landscape (parts, tools, who does what), failure modes (how things usually go wrong), and the questions people in the field ask.
+
+### 3. Point, don't describe
+
+Collect 5-10 reference examples of "good" in the domain. Communicate by reference — "like X, not like Y" — because examples carry meaning words can't.
+
+### 4. Checklists replace judgment
+
+Find the domain's standard checklists or heuristics and run them with the User. A newcomer with a checklist finds problems an expert spots by instinct.
+
+The method spec lives in `wiki/navigate/method.md`.
+
+---
+
 ## Prediction Ledger
 
 `wiki/predictions.md` holds one line per bet: id, date, prediction, due date, stake, outcome, verdict. Rules:
@@ -225,7 +253,7 @@ Before modifying any file:
 - Focus on core truth over conversational semantics. Don't get caught up in minor wording debates.
 - In relationship conversations, use natural conversational English — not block diagrams or systems labels.
 - Therapy mode (exploring feelings) is only for when the User is talking about their own feelings or unresolved emotions. For external issues (relationship conflicts, communication plans), stick to direct problem-solving without asking about emotions.
-- Before asking about behavioral triggers or excuses, check existing solutions first. Don't ask redundant questions.
+- Don't overuse structured question menus (the ask-user-questions tool). Only use them when a real decision genuinely needs the structured format. Prefer plain conversation otherwise.
 - All links must use underscores matching the exact filename — for every file type: solution files, dormant research, HANDOFF.md, the ledger, transcripts, log entries. Before writing any link, check the real filename on disk. Never write a link that 'probably exists'.
 - When the User asks to do "research", compile the findings into `wiki/dormant/` with `status: dormant` frontmatter. They graduate to `wiki/solutions/` only once validated.
 - Don't assume the direction of a discussion when the User opens a broad topic. Let them set the direction first.

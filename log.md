@@ -4,6 +4,10 @@ Reverse-chronological record of all vault operations.
 
 ---
 
+## [2026-08-10 00:30] navigate | Method built for the unknown-domains problem
+
+First real problem entered the vault: "not knowing what I don't know" — being dropped into unfamiliar domains with no vocabulary and no way to name the gaps (instance: frontend redesign, zero UI/UX knowledge). User corrected AI twice: (1) the problem is general, frontend was just an example; (2) stop overusing structured question menus (codified in AGENTS.md rules). Built the Navigate method as the third workflow: ask-for-the-questions rule, domain map (vocabulary/landscape/failure modes/questions), point-don't-describe, checklists-replace-judgment. Artifacts: wiki/navigate/method.md (five moves + rules + template), wiki/navigate/maps/frontend-design.md (map #1 — UI/UX terms, Nielsen checklist, reference gallery). Validation pending: user runs the map on the real frontend.
+
 ## [2026-08-10 00:05] purpose | Main purpose declared
 
 Second grilling session (grill-me skill, ask-user-questions rounds 1-3). The User declared the vault's main purpose in their own words: "MindVault exists so that I can become better — optimize growth, learning, career, and life." Solve and Reflect are now the two methods serving that one purpose ("absorbed" answer). AGENTS.md Core Purpose rewritten: one purpose, two methods, guardrails ("better" is broader than productive; rest counts as data; suggests never demands; never shames), annual purpose review scheduled (first: 2027-08-09; it also decides where growth/learning/career get measured — "review decides"). wiki/reflect/README.md gained rule 9 (rest is data).
