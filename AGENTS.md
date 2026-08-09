@@ -6,9 +6,10 @@ This document defines how the MindVault works and how the AI operates. Any AI se
 
 ## Core Purpose
 
-The MindVault is a problem-solving machine. Its only job is:
+The MindVault has two purposes:
 
-**You have a problem → AI researches solutions → You pick what works → AI saves it permanently.**
+1. **Solve** — the problem-solving machine. You have a problem → AI researches solutions → You pick what works → AI saves it permanently. Full workflow below.
+2. **Reflect** — the thinking mirror. Weekly numbers → the mirror shows patterns plainly → suggests one small thing to try → checks follow-through. Full workflow below.
 
 The vault is designed so that new purposes can be added later without restructuring. Each purpose lives in its own directory under `wiki/`.
 
@@ -18,7 +19,8 @@ The vault is designed so that new purposes can be added later without restructur
 
 ```
 wiki/
-  solutions/     ← One file per solved problem (primary purpose)
+  solutions/     ← One file per solved problem (Solve purpose)
+  reflect/       ← The thinking mirror: weekly numbers, suggestions, pattern reports
   dormant/       ← Unvalidated research, awaiting validation or recurrence
   archive/       ← Everything from the old vault, preserved as-is
   [new-purpose]/ ← Easy to add later without restructuring
@@ -47,7 +49,7 @@ Reverse-chronological, prepend-only log of all operations. Newest entries at the
 
 ## Core Workflow: Solve
 
-This is the only active workflow in the vault.
+This is the problem-solving workflow.
 
 ### 1. Problem
 The User tells you about a problem they're facing — could be practical, behavioral, relational, technical, or anything else.
@@ -104,6 +106,35 @@ Prepend a new entry to `log.md` with `[YYYY-MM-DD HH:MM]` and a summary of what 
 
 ### 6. Update Index
 Regenerate `index.md` from the YAML frontmatter of all files in `wiki/solutions/`.
+
+---
+
+## Core Workflow: Reflect
+
+The thinking mirror. Its only job is to show the User their own patterns, plainly, and suggest one small thing to try. The full rules live in `wiki/reflect/README.md`.
+
+### The weekly check-in (~5 minutes)
+
+At session open, if it's been 7+ days since the last row in `wiki/reflect/numbers.md`, run the check-in before anything else: ask for the six numbers (weight, sleep average, spending total, mood average, energy average, screen average) plus one optional line. Write the row. Then check `wiki/reflect/suggestions.md` — ask "last week's suggestion: tried, not tried, partial?" and record it, plainly. The User answers; the AI writes. The User never edits files.
+
+### The pattern report
+
+Monthly, or on request, once 4+ weeks of numbers exist. Write to `wiki/reflect/reports/YYYY-MM.md`:
+
+1. **What the numbers showed** — plain, no commentary.
+2. **Patterns found** — from the User's own history first. Proven playbooks only when the data shows no clear pattern.
+3. **A ranked shortlist of 2-3 small suggestions to try** — each with the mechanism: why it might work.
+4. **Follow-through review** — what was suggested before, what was tried, what the numbers prove.
+
+The report speaks plainly. It never punishes. It ends with what to try.
+
+### The mirror's rules
+
+- Reflects only what it's shown. No numbers, no mirror.
+- Says it plainly — but only about patterns, never about logging discipline.
+- Never shames a gap. Returning after any silence costs one number or one sentence.
+- Local only. Nothing leaves this device without the User asking.
+- No bets, no stakes, no penalties. The truth, repeated, is the mechanism.
 
 ---
 
