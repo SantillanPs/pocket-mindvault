@@ -4,6 +4,10 @@ Reverse-chronological record of all vault operations.
 
 ---
 
+## [2026-08-10 01:05] navigate | Method refined: "Recognize, don't describe"
+
+Follow-up session on the unknown-domains problem. User pushed past the theory: in the real situation (frontend redesign, home alone, no professional contacts, only an AI to work with), the blocker was "I don't know what to tell it because I don't know what the problem is." The answer became Navigate's sixth move: when you lack the words, describing fails — so make the other side generate (checklist, interview, three versions, reference examples, "explain what you did plainly") and shrink yourself to recognizing (yes/no/this-one-not-that-one). Recognition needs zero domain vocabulary. User's verdict: "that is genius, I love it." User also corrected AI for assuming their behavior in unfamiliar rooms ("I don't just nod along") — codified in AGENTS.md rules. Captured: wiki/navigate/method.md (Move 6 + AI-only-room techniques), HANDOFF updated. Validation still pending on the real frontend.
+
 ## [2026-08-10 00:30] navigate | Method built for the unknown-domains problem
 
 First real problem entered the vault: "not knowing what I don't know" — being dropped into unfamiliar domains with no vocabulary and no way to name the gaps (instance: frontend redesign, zero UI/UX knowledge). User corrected AI twice: (1) the problem is general, frontend was just an example; (2) stop overusing structured question menus (codified in AGENTS.md rules). Built the Navigate method as the third workflow: ask-for-the-questions rule, domain map (vocabulary/landscape/failure modes/questions), point-don't-describe, checklists-replace-judgment. Artifacts: wiki/navigate/method.md (five moves + rules + template), wiki/navigate/maps/frontend-design.md (map #1 — UI/UX terms, Nielsen checklist, reference gallery). Validation pending: user runs the map on the real frontend.

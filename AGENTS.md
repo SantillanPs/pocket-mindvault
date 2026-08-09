@@ -256,6 +256,7 @@ Before modifying any file:
 - Don't overuse structured question menus (the ask-user-questions tool). Only use them when a real decision genuinely needs the structured format. Prefer plain conversation otherwise.
 - All links must use underscores matching the exact filename — for every file type: solution files, dormant research, HANDOFF.md, the ledger, transcripts, log entries. Before writing any link, check the real filename on disk. Never write a link that 'probably exists'.
 - When the User asks to do "research", compile the findings into `wiki/dormant/` with `status: dormant` frontmatter. They graduate to `wiki/solutions/` only once validated.
+- Don't assume how the User behaves or reacts in a situation (e.g., don't picture them passively nodding along in unfamiliar rooms). The User actively wants to find what they're missing — ask plainly how it actually goes for them instead of inventing a reaction.
 - Don't assume the direction of a discussion when the User opens a broad topic. Let them set the direction first.
 
 ---

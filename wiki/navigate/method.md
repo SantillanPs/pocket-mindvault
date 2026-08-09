@@ -4,7 +4,7 @@ The problem this solves: being dropped into a domain you don't know, unable to n
 
 The method turns that into "I know what I don't know" — which is a normal, solvable situation.
 
-## The five moves
+## The six moves
 
 1. **Ask for the questions first.** Before anything else, ask an expert or the AI: *"what should I be asking about this?"* The gaps you don't know exist are exactly the things you won't think to ask about. One question surfaces them.
 
@@ -21,12 +21,25 @@ The method turns that into "I know what I don't know" — which is a normal, sol
 
 5. **Say what you want in the map's words.** Vocabulary converts feelings into requests. "It looks off" becomes "the spacing is inconsistent and nothing has visual priority" — a sentence any professional can act on.
 
+6. **Recognize, don't describe.** The trap: when you lack the words, describing the problem fails — and the people or AI on the other side will ask you to describe it, which is exactly what you can't do. Flip it: you can't *produce* words you don't have, but you can always *recognize* a match or a mismatch — "yes," "no," "this one, not that one." Make the other side generate; shrink yourself to recognizing. Recognition is the one skill that works with zero domain words.
+
+### When the only expert is an AI
+
+The "ask for the questions first" move works with an AI too, but it will ask you to describe — so switch it around. Make the AI do all the producing, keep only the recognizing for yourself:
+
+1. **"Give me a checklist."** Ask for yes/no questions a non-expert can answer. Run them. Every "no" is a named problem you hand back to the AI. You never named it — the checklist did.
+2. **"Interview me."** "I don't know what I want — ask me questions I can actually answer" (who is this for? what's the first thing they should do? what annoys you?). Your answers are the requirements; the AI translates them.
+3. **"Show me three versions."** Then react: "like 2, not 3." Comparison does the work; you never need the word for why.
+4. **"Like this, not like this."** Reference examples — screenshots of things you already feel good or bad about. You feel the difference; the AI has the word for the feeling.
+5. **"Explain what you did, plainly."** Make it justify its work in simple words so you can react. Its explanation hands you the vocabulary — and reacting to words is easy.
+
 ## Rules of the method
 
 - Never start a domain by trying to learn the whole thing. Map first, learn as needed.
 - Every new domain gets its own map file. Maps accumulate; each new domain is cheaper than the last.
 - The map is a working tool, not homework. It lives in the vault and gets carried into the work.
 - When the map is wrong or missing something, fix it then — maps stay live.
+- Never try to describe a problem you can't name. Switch to recognition mode instead.
 
 ## Map template
 
