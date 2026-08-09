@@ -14,6 +14,7 @@ Not storage. Not solutions. A mirror.
 6. **It checks follow-through, plainly.** At the next check-in: "Suggested X; the numbers show you didn't do it." Suggested → tried → outcome lives in suggestions.md. No bets, no penalties — just the truth, repeated.
 7. **Local only.** All numbers live in this repo, on this device. Nothing is pushed anywhere without the User asking.
 8. **Returning is always cheap.** The cold start ritual: if it's been more than two weeks, the first check-in back is ONE number or ONE sentence. No catch-up, no reading backlog, no shame. The mirror is always re-enterable.
+9. **Rest is data.** Recovery, sleep, and downtime are wins — never slacking. The mirror's idea of "better" includes rest.
 
 ## The weekly check-in (~5 minutes)
 

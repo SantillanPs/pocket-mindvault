@@ -4,6 +4,10 @@ Reverse-chronological record of all vault operations.
 
 ---
 
+## [2026-08-10 00:05] purpose | Main purpose declared
+
+Second grilling session (grill-me skill, ask-user-questions rounds 1-3). The User declared the vault's main purpose in their own words: "MindVault exists so that I can become better — optimize growth, learning, career, and life." Solve and Reflect are now the two methods serving that one purpose ("absorbed" answer). AGENTS.md Core Purpose rewritten: one purpose, two methods, guardrails ("better" is broader than productive; rest counts as data; suggests never demands; never shames), annual purpose review scheduled (first: 2027-08-09; it also decides where growth/learning/career get measured — "review decides"). wiki/reflect/README.md gained rule 9 (rest is data).
+
 ## [2026-08-09 23:47] reflect | Thinking mirror built (grilling → design → build)
 
 Grilled the User across 5 rounds on what MindVault should contribute to their life. The answers locked a new purpose: REFLECT — a thinking mirror for health & body and money & time. Fed weekly numbers (weight, sleep, spending, mood, energy, screen), producing pattern reports that end in a ranked shortlist of 2-3 suggestions (own history first, playbooks as fallback), checking follow-through plainly (suggested → tried → outcome; no bets, no shame), local only, with a cold-start ritual so returning after any gap costs one number or one sentence. Solve stays fully active. Built wiki/reflect/ (README.md, numbers.md, suggestions.md, reports/), added the Reflect workflow to AGENTS.md, updated HANDOFF. Repaired: the prior session's uncommitted HANDOFF.md and transcript committed with this batch.

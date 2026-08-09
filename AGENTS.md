@@ -6,12 +6,22 @@ This document defines how the MindVault works and how the AI operates. Any AI se
 
 ## Core Purpose
 
-The MindVault has two purposes:
+The MindVault exists so that the User can become better — optimize growth, learning, career, and life. That is the main purpose. Everything in this vault serves it.
 
-1. **Solve** — the problem-solving machine. You have a problem → AI researches solutions → You pick what works → AI saves it permanently. Full workflow below.
-2. **Reflect** — the thinking mirror. Weekly numbers → the mirror shows patterns plainly → suggests one small thing to try → checks follow-through. Full workflow below.
+The vault serves it through two methods:
 
-The vault is designed so that new purposes can be added later without restructuring. Each purpose lives in its own directory under `wiki/`.
+1. **Solve** — the problem-solving machine. You have a problem → AI researches solutions → You pick what works → AI saves it permanently. Full workflow below. Fixing things makes better.
+2. **Reflect** — the thinking mirror. Weekly numbers → the mirror shows patterns plainly → suggests one small thing to try → checks follow-through. Full workflow below. Clarity makes better.
+
+### What "better" means
+
+- Better is broader than productive. Better = healthier, calmer, happier, and smarter — not just more output.
+- Rest counts as data. Recovery, sleep, and downtime are wins in this vault, never slacking.
+- The vault suggests; it never demands. The User sets the pace, always.
+- The vault reflects; it never shames. Missed weeks are never weaponized.
+- A purpose written once becomes wallpaper. The main purpose is re-examined once a year (first review: 2027-08-09): re-grilled with the User, rewritten if it no longer fits. The review also decides where growth, learning, and career get measured — until then, growth lives in the daily record (transcripts, decisions, outcomes) and the review reads it back.
+
+The vault is designed so that new methods can be added later without restructuring. Each method lives in its own directory under `wiki/`.
 
 ---
 
@@ -19,7 +29,7 @@ The vault is designed so that new purposes can be added later without restructur
 
 ```
 wiki/
-  solutions/     ← One file per solved problem (Solve purpose)
+  solutions/     ← One file per solved problem (Solve method)
   reflect/       ← The thinking mirror: weekly numbers, suggestions, pattern reports
   dormant/       ← Unvalidated research, awaiting validation or recurrence
   archive/       ← Everything from the old vault, preserved as-is
@@ -49,7 +59,7 @@ Reverse-chronological, prepend-only log of all operations. Newest entries at the
 
 ## Core Workflow: Solve
 
-This is the problem-solving workflow.
+This is the first method — fixing problems, so the User becomes better.
 
 ### 1. Problem
 The User tells you about a problem they're facing — could be practical, behavioral, relational, technical, or anything else.
@@ -111,7 +121,7 @@ Regenerate `index.md` from the YAML frontmatter of all files in `wiki/solutions/
 
 ## Core Workflow: Reflect
 
-The thinking mirror. Its only job is to show the User their own patterns, plainly, and suggest one small thing to try. The full rules live in `wiki/reflect/README.md`.
+The second method — the thinking mirror. Its only job is to show the User their own patterns, plainly, and suggest one small thing to try. The full rules live in `wiki/reflect/README.md`.
 
 ### The weekly check-in (~5 minutes)
 
@@ -164,7 +174,7 @@ If the User points out an error in a solution, the AI fixes it — the User neve
 
 ## Modular Extensibility
 
-To add a new purpose later (e.g., habit tracking, project management, journaling):
+To add a new method later (e.g., habit tracking, project management, journaling):
 1. Create `wiki/[new-purpose]/`
 2. Add the workflow section to this file
 3. No restructuring needed — everything is self-contained
