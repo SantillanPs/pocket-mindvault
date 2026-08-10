@@ -4,6 +4,10 @@ Reverse-chronological record of all vault operations.
 
 ---
 
+## [2026-08-11 02:54] reflect | First weekly numbers row seeded
+
+User gave the first real Reflect data (2026-W33, Aug 10): slept at 12am, woke around 11am — sleep ~11h; 5 muscle-ups + 5×30s dead hangs (one line). Row written to wiki/reflect/numbers.md. Weight, spending, mood, energy, screen left empty — no pressure. First row is the mirror's starting point; a pattern report becomes possible once 4+ weeks exist. Committed.
+
 ## [2026-08-11 02:49] review | Post-review repair session (workflow findings → fixes)
 
 The multi-perspective fitness review finished (4 perspectives + synthesis) and the User said "go" on the top fixes. Repairs made: (1) healthcheck.sh log-entry check now scans ALL dated entries for the true newest and flags reverse-chronological violations (it previously read `head -1`, assuming prepend-only discipline — the 08-11 entries appended at the bottom had escaped it); (2) healthcheck 6b now flags only ai-present solutions whose `deployed_to` doesn't name an existing rule/script/file — the "encode into the environment" gate is now mechanical instead of a permanent nag; (3) the Navigate validation was closed properly — first solution file saved: wiki/solutions/unknown-domains-navigate-method.md (problem: unknown unknowns; fix: Navigate method; recheck 2026-11-09; mechanism: ai-present; dissent: anecdotal validation, no prediction was written before it); (4) index.md regenerated with the solution link (healthcheck 5a now 1/1); (5) log.md reordered to true reverse-chronological with missing HH:MM timestamps added from git commit times (2f636b5 02:01, 114d8f7 02:23); (6) dead references repaired: AGENTS.md Capabilities marked not-yet-replicated (wiki/archive/skills/ is empty — the source vault had no archive content), VAULT_REPLICATION_SPEC.md flagged as superseded by the live AGENTS.md (4 workflows now, spec still embeds one), .gitkeep files added so fresh clones keep the directory tree. Bookkeeping per AGENTS.md: transcript appended, HANDOFF updated, committed at session close.
