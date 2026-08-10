@@ -4,6 +4,10 @@ Reverse-chronological record of all vault operations.
 
 ---
 
+## [2026-08-11 02:57] reflect | Workout added as a tracked column
+
+User asked to add workout to the mirror. Design discussion first: a static one-line would be a bad tracker (free text can't trend, and a must-fill column adds friction) — so workout becomes the 7th number (sessions/week, comparable across weeks) and the one-line stays dynamic (context, not data). Updated AGENTS.md (seven numbers), wiki/reflect/README.md (rules + check-in table), wiki/reflect/numbers.md (header + W33 row: 1 session). Also discussed — not yet codified: the AI proposes promoting a recurring one-liner to a column (3+ mentions), User decides; columns retire after 8 quiet weeks; the one-line stays free. Pending the User's yes.
+
 ## [2026-08-11 02:54] reflect | First weekly numbers row seeded
 
 User gave the first real Reflect data (2026-W33, Aug 10): slept at 12am, woke around 11am — sleep ~11h; 5 muscle-ups + 5×30s dead hangs (one line). Row written to wiki/reflect/numbers.md. Weight, spending, mood, energy, screen left empty — no pressure. First row is the mirror's starting point; a pattern report becomes possible once 4+ weeks exist. Committed.

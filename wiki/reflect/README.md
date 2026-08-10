@@ -6,7 +6,7 @@ Not storage. Not solutions. A mirror.
 
 ## The rules of the mirror
 
-1. **It only reflects what it's shown.** The mirror runs on numbers — weight, sleep, spending, mood, energy, screen time — logged weekly. No numbers, no mirror.
+1. **It only reflects what it's shown.** The mirror runs on numbers — weight, sleep, spending, mood, energy, screen time, workout — logged weekly. No numbers, no mirror.
 2. **It says it plainly.** No sugarcoating. If the numbers show a pattern (spending up three weeks straight, sleep under 6 hours), the report says so directly. That is the deal.
 3. **It never shames the person for logging.** The "plainly" rule applies to patterns, never to how often the User checks in. Missed weeks are never scolded.
 4. **After showing the truth, it suggests one thing to try.** Clarity without a next step is a dead end. Each report ends with a ranked shortlist of 2-3 small suggestions.
@@ -18,9 +18,9 @@ Not storage. Not solutions. A mirror.
 
 ## The weekly check-in (~5 minutes)
 
-One row appended to numbers.md. The User gives six numbers and an optional line:
+One row appended to numbers.md. The User gives seven numbers and an optional line:
 
-| week | weight (kg) | sleep (avg h) | spending (total) | mood (avg /10) | energy (avg /10) | screen (avg h/day) | one line |
+| week | weight (kg) | sleep (avg h) | spending (total) | mood (avg /10) | energy (avg /10) | screen (avg h/day) | workout (sessions) | one line |
 
 The AI asks, the User answers, the AI writes. The User never edits files.
 
