@@ -31,3 +31,9 @@ Ported scripts/healthcheck.ps1 to scripts/healthcheck.sh (pure bash + coreutils 
 ## [2026-08-08] bootstrap | Vault created / replicated
 
 Vault replicated from VAULT_REPLICATION_SPEC.md on a fresh device. Created AGENTS.md, HANDOFF.md, index.md, log.md, wiki/predictions.md, scripts/healthcheck.ps1, .gitignore, and the full directory tree from the spec (section 2). wiki/archive/ started fresh with only raw/transcripts/ — the original vault had no archive content to copy. First transcript written to wiki/archive/raw/transcripts/2026-08-08.md. Initial commit made. Healthcheck: PowerShell is not available on this device (Termux/Android), so scripts/healthcheck.ps1 was created per spec but could not be executed.
+
+---
+
+## [2026-08-11] navigate | Validation passed — method worked on the real frontend
+
+The open validation on the unknown-domains problem is CLOSED. The User ran the Navigate method + frontend-design map on the real frontend redesign and reported the advice worked. First real-world test of the six-move method (incl. Move 6 — recognize, don't describe) and map #1 passed. HANDOFF updated (open problem closed, Last Known State entry), transcript 2026-08-11.md written, committed. Nice-to-have follow-up: user walkthrough of what specifically worked, to strengthen the map.

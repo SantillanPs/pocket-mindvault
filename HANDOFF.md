@@ -4,7 +4,7 @@ Session state lives here, on disk — never only in the AI's memory. Read at eve
 
 ## Open Problems
 
-- [2026-08-10] Unknown unknowns in unfamiliar domains. METHOD BUILT: Navigate workflow added to AGENTS.md (ask-for-questions, domain map, point-don't-describe, checklists). Artifacts: wiki/navigate/method.md (six moves) + wiki/navigate/maps/frontend-design.md (map #1: UI/UX vocabulary, landscape, failure modes, questions, Nielsen checklist, reference gallery). METHOD REFINED same day: Move 6 — "Recognize, don't describe" (when you lack the words, make the other side generate — AI or person — and shrink yourself to recognition: yes/no/this-one-not-that-one). Includes the five AI-only-room techniques (give-me-a-checklist, interview-me, show-me-three-versions, like-this-not-like-this, explain-what-you-did-plainly). Awaits validation on the real frontend redesign.
+- (none — the unknown-domains / Navigate method was VALIDATED on the real frontend redesign on 2026-08-11; see Last Known State. Full walkthrough of what specifically worked is a nice-to-have, not an open problem.)
 
 ## Pending Validations
 
@@ -16,6 +16,7 @@ Session state lives here, on disk — never only in the AI's memory. Read at eve
 
 ## Last Known State
 
+- 2026-08-11: VALIDATION PASSED. The Navigate method + frontend-design map were run on the real frontend redesign, and the User reported the advice "worked." First real-world validation of the method — the unknown-domains open problem is closed. Details of what specifically landed (which moves, which map parts) pending the User's walkthrough; nothing blocking.
 - 2026-08-10 (2nd session): User walked through the AI-only room concretely (home alone, no professional contacts, only AI for the redesign) — asked "what should I have done?" The answer became Move 6 of Navigate: stop describing, start recognizing. User: "that is genius, I love it." Captured in wiki/navigate/method.md. User also corrected AI for assuming how they behave in unfamiliar rooms ("I don't just nod along" — they actively want to find what they're missing; codified in AGENTS.md rules).
 - 2026-08-10: Navigate method built (third workflow). User corrected AI: stop overusing structured question menus — only when a real decision needs it (codified in AGENTS.md rules + memory). Method artifacts: wiki/navigate/method.md + maps/frontend-design.md. Solve cycle for the unknown-domains problem is at validation-pending stage.
 - 2026-08-10: Second grilling completed. MAIN PURPOSE declared and written into AGENTS.md (user's own words): "The MindVault exists so that the User can become better — optimize growth, learning, career, and life." Solve and Reflect absorbed as the two METHODS serving it (per user's "absorbed" answer). Guardrails written into Core Purpose: "better" is broader than productive; rest counts as data; the vault suggests, never demands; never shames. Annual purpose review scheduled (first: 2027-08-09) — it also decides where growth/learning/career get measured ("review decides"). Growth lives in the daily record (transcripts) until then. wiki/reflect/README.md gained rule 9 (rest is data).
