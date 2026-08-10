@@ -4,7 +4,8 @@ Session state lives here, on disk — never only in the AI's memory. Read at eve
 
 ## Open Problems
 
-- (none — the unknown-domains / Navigate method was VALIDATED on the real frontend redesign on 2026-08-11; see Last Known State. Full walkthrough of what specifically worked is a nice-to-have, not an open problem.)
+- [2026-08-11] Learning dies of scattered interests. METHOD BUILT: Learn (4th method) — interest → need → thread → real-world proof (wiki/learn/). Rules from grilling: needs decide; capture-all/active-some; progress = real-world proof; daily minute (1 min, AI files); AI tracks automatically via Mnemosyne. Awaits real usage. First thread: frontend-design (active, need = the redesign).
+- (closed 2026-08-11 — the unknown-domains / Navigate method was VALIDATED on the real frontend redesign; see Last Known State.)
 
 ## Pending Validations
 
@@ -16,6 +17,7 @@ Session state lives here, on disk — never only in the AI's memory. Read at eve
 
 ## Last Known State
 
+- 2026-08-11 (grilling): 10-question grill on synergizing the AI's memory (Mnemosyne) with MindVault for the User's goal (learning). Answers locked the Learn method: interest-driven learning dies of scattered interests; sticks when needed; returns for visible progress; progress = real-world proof; AI tracks automatically; daily 1-minute feed ("I log, you file"); needs decide. Built wiki/learn/ + AGENTS.md method 4. Rule added: grill-me sessions always use the ask-user-questions tool.
 - 2026-08-11: VALIDATION PASSED. The Navigate method + frontend-design map were run on the real frontend redesign, and the User reported the advice "worked." First real-world validation of the method — the unknown-domains open problem is closed. Details of what specifically landed (which moves, which map parts) pending the User's walkthrough; nothing blocking.
 - 2026-08-10 (2nd session): User walked through the AI-only room concretely (home alone, no professional contacts, only AI for the redesign) — asked "what should I have done?" The answer became Move 6 of Navigate: stop describing, start recognizing. User: "that is genius, I love it." Captured in wiki/navigate/method.md. User also corrected AI for assuming how they behave in unfamiliar rooms ("I don't just nod along" — they actively want to find what they're missing; codified in AGENTS.md rules).
 - 2026-08-10: Navigate method built (third workflow). User corrected AI: stop overusing structured question menus — only when a real decision needs it (codified in AGENTS.md rules + memory). Method artifacts: wiki/navigate/method.md + maps/frontend-design.md. Solve cycle for the unknown-domains problem is at validation-pending stage.

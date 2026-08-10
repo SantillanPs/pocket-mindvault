@@ -37,3 +37,9 @@ Vault replicated from VAULT_REPLICATION_SPEC.md on a fresh device. Created AGENT
 ## [2026-08-11] navigate | Validation passed — method worked on the real frontend
 
 The open validation on the unknown-domains problem is CLOSED. The User ran the Navigate method + frontend-design map on the real frontend redesign and reported the advice worked. First real-world test of the six-move method (incl. Move 6 — recognize, don't describe) and map #1 passed. HANDOFF updated (open problem closed, Last Known State entry), transcript 2026-08-11.md written, committed. Nice-to-have follow-up: user walkthrough of what specifically worked, to strengthen the map.
+
+---
+
+## [2026-08-11] learn | New method built from grilling: interest → need → thread → real-world proof
+
+Grilled the User (10 questions, ask-user-questions tool) on synergizing the AI's memory (Mnemosyne) with MindVault for their goal: learning. Their answers: interest-driven learning dies of scattered interests; sticks when NEEDED; returns for visible progress; progress = real-world proof; AI tracks automatically; daily 1-minute feed ("I log, you file"); needs decide what stays active. Built the Learn method (4th): wiki/learn/ (README.md, threads.md seeded with frontend-design thread, shelf.md, daily.md), AGENTS.md (method 4 + architecture + grill-me rule: grill sessions always use the ask-user-questions tool), HANDOFF, transcript, log. Committed.

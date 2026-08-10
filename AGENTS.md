@@ -8,11 +8,12 @@ This document defines how the MindVault works and how the AI operates. Any AI se
 
 The MindVault exists so that the User can become better — optimize growth, learning, career, and life. That is the main purpose. Everything in this vault serves it.
 
-The vault serves it through three methods:
+The vault serves it through four methods:
 
 1. **Solve** — the problem-solving machine. You have a problem → AI researches solutions → You pick what works → AI saves it permanently. Full workflow below. Fixing things makes better.
 2. **Reflect** — the thinking mirror. Weekly numbers → the mirror shows patterns plainly → suggests one small thing to try → checks follow-through. Full workflow below. Clarity makes better.
 3. **Navigate** — entering a domain the User doesn't know without getting lost. Map it, get the words, ask the right questions. Full workflow below. Knowing what you don't know makes better.
+4. **Learn** — sustained, interest-driven learning without dying of scattered interests. Interest → need → thread → real-world proof. Full workflow below. Used learning makes better.
 
 ### What "better" means
 
@@ -33,6 +34,7 @@ wiki/
   solutions/     ← One file per solved problem (Solve method)
   reflect/       ← The thinking mirror: weekly numbers, suggestions, pattern reports
   navigate/      ← Entering unknown domains: the method, plus a library of domain maps
+  learn/         ← Interest → need → thread → real-world proof: threads, shelf, daily minute
   dormant/       ← Unvalidated research, awaiting validation or recurrence
   archive/       ← Everything from the old vault, preserved as-is
   [new-purpose]/ ← Easy to add later without restructuring
@@ -176,6 +178,30 @@ The method spec lives in `wiki/navigate/method.md`.
 
 ---
 
+## Core Workflow: Learn
+
+The fourth method — sustained, interest-driven learning that doesn't die of scattered interests. Interest → need → thread → real-world proof. Designed from the User's grilling answers (Aug 11, 2026).
+
+### The five rules
+
+1. **Needs decide.** A thread is active only while attached to a real need — a concrete thing it's FOR. No live need → automatic move to the shelf. No shame.
+2. **Capture everything, active only some.** Every interest gets captured to the curiosity shelf (`wiki/learn/shelf.md`); only threads with live needs are active in `wiki/learn/threads.md`.
+3. **Progress = real-world proof.** A thread advances on evidence that the learning changed something done in the real world. Notes about learning don't count; "used it" does. Each active thread carries a Last Real-World Proof line.
+4. **Daily minute (~1 minute).** The User logs one line: what they learned/did/touched. The AI files it — connects it to the right thread, updates status and proof, checks need liveness, shelves dead-need threads. Missing days are fine; never shame, never chase.
+5. **The AI tracks automatically.** Mnemosyne (the AI's memory) remembers threads + needs across sessions, auto-captures interests noticed in conversation (files them to the shelf), and surfaces dormant threads when they resurface. The vault stays the durable record — state is never only in the AI's memory.
+
+### The daily minute flow
+
+- The User says or types one line — "today I X" — in any session. No ceremony.
+- The AI files it: connect to thread → update status → update real-world proof if real → close or shelf threads whose need is met or dead.
+- The AI keeps `threads.md` current and commits at session close.
+
+### Capturing a new interest
+
+When a new interest appears, capture it to the shelf and ask once, plainly: "What is this FOR? What real thing needs it?" — no need, it stays shelved. A need attaches → promote it to an active thread.
+
+---
+
 ## Prediction Ledger
 
 `wiki/predictions.md` holds one line per bet: id, date, prediction, due date, stake, outcome, verdict. Rules:
@@ -253,7 +279,7 @@ Before modifying any file:
 - Focus on core truth over conversational semantics. Don't get caught up in minor wording debates.
 - In relationship conversations, use natural conversational English — not block diagrams or systems labels.
 - Therapy mode (exploring feelings) is only for when the User is talking about their own feelings or unresolved emotions. For external issues (relationship conflicts, communication plans), stick to direct problem-solving without asking about emotions.
-- Don't overuse structured question menus (the ask-user-questions tool). Only use them when a real decision genuinely needs the structured format. Prefer plain conversation otherwise.
+- Don't overuse structured question menus (the ask-user-questions tool). Only use them when a real decision genuinely needs the structured format. Prefer plain conversation otherwise. EXCEPTION (User, Aug 11 2026): when the User invokes the grill-me skill, ALWAYS use the ask-user-questions tool — grill sessions run on structured questions, one at a time, short and plain.
 - All links must use underscores matching the exact filename — for every file type: solution files, dormant research, HANDOFF.md, the ledger, transcripts, log entries. Before writing any link, check the real filename on disk. Never write a link that 'probably exists'.
 - When the User asks to do "research", compile the findings into `wiki/dormant/` with `status: dormant` frontmatter. They graduate to `wiki/solutions/` only once validated.
 - Don't assume how the User behaves or reacts in a situation (e.g., don't picture them passively nodding along in unfamiliar rooms). The User actively wants to find what they're missing — ask plainly how it actually goes for them instead of inventing a reaction.
