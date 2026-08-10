@@ -17,8 +17,11 @@ The vault serves it through four methods:
 
 ### What "better" means
 
-- Better is broader than productive. Better = healthier, calmer, happier, and smarter — not just more output.
-- Rest counts as data. Recovery, sleep, and downtime are wins in this vault, never slacking.
+- Better is a state, not a checklist. Peak performance — the head clear as day, thinking at full power: sharp, focused, motivated. The User knows it when they're in it.
+- Rest is armor for peak. Recovery, sleep, and downtime protect the peak state — burnout is the enemy of peak. Rest was never the goal; it's strategy.
+- Peak is the vehicle. Being at peak is how the User achieves the things that get them closer to their goal.
+- The goal: changed something. Legacy, impact — making something real different. Still forming; excavated in its own mode (not grilling — see HANDOFF: legacy thread) and tracked until it resolves.
+- The standard is the User's, not a ghost's. "Who I should be" is retired — no imagined yardstick. The standard is named from inside the peak state, the next time the User is actually in it (standing thread, see HANDOFF).
 - The vault suggests; it never demands. The User sets the pace, always.
 - The vault reflects; it never shames. Missed weeks are never weaponized.
 - A purpose written once becomes wallpaper. The main purpose is re-examined once a year (first review: 2027-08-09): re-grilled with the User, rewritten if it no longer fits. The review also decides where growth, learning, and career get measured — until then, growth lives in the daily record (transcripts, decisions, outcomes) and the review reads it back.

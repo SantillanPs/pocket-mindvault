@@ -4,6 +4,10 @@ Reverse-chronological record of all vault operations.
 
 ---
 
+## [2026-08-11 03:49] purpose | "Better" redefined — peak, not wellness
+
+Grilled the User (4 rounds, ask-user-questions) on the definition of "better" — the User called it two days early ("I don't feel like it's right for me"). Findings: the four adjectives (healthier/calmer/happier/smarter) were AI-suggested and never owned; the User's felt "better" is a STATE — "head clear as day, thinking at full power" — peak performance, not wellness; rest = armor for peak (the guard was right, wrong reason); peak = the vehicle; goal = "changed something" (legacy/impact, still forming); "who I should be" RETIRED as the yardstick (a ghost that could never be satisfied). Rewrote the "What better means" block in AGENTS.md in the User's words (conduct rules kept). Mission line untouched (User unsure). NEW MODE: the legacy thread needs more than grilling — the User asked for something more psychological / therapy-like to extract the feelings. Standing thread: name the standard the next time the User is at peak. HANDOFF updated; commit at close.
+
 ## [2026-08-11 02:57] reflect | Workout added as a tracked column
 
 User asked to add workout to the mirror. Design discussion first: a static one-line would be a bad tracker (free text can't trend, and a must-fill column adds friction) — so workout becomes the 7th number (sessions/week, comparable across weeks) and the one-line stays dynamic (context, not data). Updated AGENTS.md (seven numbers), wiki/reflect/README.md (rules + check-in table), wiki/reflect/numbers.md (header + W33 row: 1 session). Also discussed — not yet codified: the AI proposes promoting a recurring one-liner to a column (3+ mentions), User decides; columns retire after 8 quiet weeks; the one-line stays free. Pending the User's yes.

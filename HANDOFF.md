@@ -4,6 +4,7 @@ Session state lives here, on disk — never only in the AI's memory. Read at eve
 
 ## Open Problems
 
+- [2026-08-11] LEGACY THREAD (open, excavation mode): "changed something" — legacy, impact. Grilling hit its limit (it produced recognition, not feeling); the User asked for something more psychological / therapy-like to extract the feelings underneath. Standing thread: the next time the User is at peak, name the standard and check the "better" definition against it. Mission line ("become better — optimize growth, learning, career, and life") held as-is until legacy resolves.
 - [2026-08-11] Learning dies of scattered interests. METHOD BUILT: Learn (4th method) — interest → need → thread → real-world proof (wiki/learn/). Rules from grilling: needs decide; capture-all/active-some; progress = real-world proof; daily minute (1 min, AI files); AI tracks automatically via Mnemosyne. Awaits real usage. First thread: frontend-design (active, need = the redesign).
 - (closed 2026-08-11 — the unknown-domains / Navigate method was VALIDATED on the real frontend redesign, and the fix is now saved: wiki/solutions/unknown-domains-navigate-method.md. Recheck due 2026-11-09.)
 
@@ -17,6 +18,7 @@ Session state lives here, on disk — never only in the AI's memory. Read at eve
 
 ## Last Known State
 
+- 2026-08-11 (grilling → rewrite): "Better" redefined in the User's own words: better = peak performance (head clear as day, thinking at full power — a felt state, recognized from inside), rest = armor for peak, peak = the vehicle to the goal, goal = changed something (legacy, still forming). "Who I should be" retired as the yardstick. Old wellness definition (healthier/calmer/happier/smarter — AI-suggested, never owned) replaced in AGENTS.md; conduct rules (suggests never demands, never shames) kept. Mission line untouched (User unsure). Next: legacy excavation in a therapy-like mode, one question at a time.
 - 2026-08-11 (design change): WORKOUT added as the 7th tracked Reflect number (sessions/week) — user request, after design discussion (static one-line = bad tracker; workout gets a real column, one-line stays dynamic). Updated AGENTS.md, wiki/reflect/README.md, wiki/reflect/numbers.md. W33 seeded: 1 session. Pending user decision: codify the "promote recurring one-liner to a column" rule (mirror names, User decides; columns retire after 8 quiet weeks; one-line stays free).
 - 2026-08-11 (check-in): FIRST Reflect row seeded (2026-W33, Aug 10) — sleep ~11h (slept 12am, woke ~11am), one line: 5 muscle-ups + 5×30s dead hangs. Weight/spending/mood/energy/screen still empty; fill whenever available. First pattern report becomes possible once 4+ weeks of rows exist.
 - 2026-08-11 (post-review repair session): workflow review verdict "Design A−, execution C" — 0 solutions/0 predictions/0 Reflect rows, 9/9 meta commits, live healthcheck bug (head -1 missed appended log entries). User said "go". Fixed: healthcheck log-scan + 6b encoding gate; saved the first solution file (unknown-domains-navigate-method.md, recheck 2026-11-09); regenerated index.md (1 solution); log.md reordered reverse-chronological with commit-derived times; dead references repaired (AGENTS.md capabilities marked pending, spec flagged superseded, .gitkeep × 10). Committed at session close.
@@ -33,3 +35,4 @@ Session state lives here, on disk — never only in the AI's memory. Read at eve
 
 - The Navigate follow-up: a walkthrough of what specifically landed on the frontend redesign (which move/map part worked) — would strengthen the map and close the loop on the saved solution's dissent note.
 - Remaining Reflect numbers for 2026-W33 (weight, spending total, mood avg, energy avg, screen avg) — welcome whenever, no due date, no pressure.
+- The legacy excavation (in progress, conversational): "changed something" — what it feels like, where it came from. One question at a time, no menus.
