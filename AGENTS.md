@@ -109,7 +109,7 @@ The specific thing that solved it.
 The real reason — what was happening underneath, and why this addressed it.
 ```
 
-Permanence is earned by survival, not by first-week enthusiasm: every solution carries a `recheck` date (roughly solved + 90 days). If the problem recurs after being marked solved, the solution is demoted to hypothesis and reworked. If the AI doubts the fix at save time, it records that in the file as a `dissent` note. A fix is fully saved only when it works without the AI in the room: `mechanism: ai-absent`. If it still needs the AI to re-apply (`ai-present`), encode it into the environment — a rule in this file, a script in `scripts/`, a habit — until it doesn't. The healthcheck flags `ai-present` solutions at session open.
+Permanence is earned by survival, not by first-week enthusiasm: every solution carries a `recheck` date (roughly solved + 90 days). If the problem recurs after being marked solved, the solution is demoted to hypothesis and reworked. If the AI doubts the fix at save time, it records that in the file as a `dissent` note. A fix is fully saved only when it works without the AI in the room: `mechanism: ai-absent`. If it still needs the AI to re-apply (`ai-present`), encode it into the environment — a rule in this file, a script in `scripts/`, a habit — until it doesn't. The healthcheck flags `ai-present` solutions whose fix isn't encoded into the environment yet (their `deployed_to` must name an existing rule, script, or file).
 
 The session cannot close with a validated-but-unsaved fix. If the User says a fix worked, the solution file exists before the session ends.
 
@@ -348,7 +348,11 @@ Never push to remote without asking first.
 
 ## Capabilities (AI Skills)
 
-* **Synthesis**: Method for combining multiple sources into a cohesive summary. Sourced at `wiki/archive/skills/synthesis.md`.
-* **Scenario Sparring**: Socratic sparring protocol for testing logic under pressure. Sourced at `wiki/archive/skills/scenario_sparring.md`.
-* **AI Research Bridge**: Protocol for compiling research dossiers. Sourced at `wiki/archive/skills/ai_research_bridge.md`.
-* **Therapeutic Elicitation**: Socratic clinical interviewing. Sourced at `wiki/archive/skills/therapeutic_elicitation.md`.
+> Status (2026-08-11): the source vault had no archive content to copy, so `wiki/archive/skills/` is
+> empty — the four skills below are **not yet in this vault** (pending replication from the original
+> vault). Do not link to them as if they exist; treat them as unavailable until the files are present.
+
+* **Synthesis**: Method for combining multiple sources into a cohesive summary. Sourced at `wiki/archive/skills/synthesis.md` (not yet in vault).
+* **Scenario Sparring**: Socratic sparring protocol for testing logic under pressure. Sourced at `wiki/archive/skills/scenario_sparring.md` (not yet in vault).
+* **AI Research Bridge**: Protocol for compiling research dossiers. Sourced at `wiki/archive/skills/ai_research_bridge.md` (not yet in vault).
+* **Therapeutic Elicitation**: Socratic clinical interviewing. Sourced at `wiki/archive/skills/therapeutic_elicitation.md` (not yet in vault).

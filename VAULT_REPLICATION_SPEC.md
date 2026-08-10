@@ -2,6 +2,15 @@
 
 Give this file to an AI on a fresh device (or point it at an empty folder). The AI's job: read this file fully, then create the vault exactly as described. **This file is self-contained** — every required file's content or exact format is included below. The only thing not regenerated is the contents of `wiki/archive/`, which you copy over from the original vault (or start fresh and let it grow).
 
+> **STATUS (2026-08-11): historical bootstrap document — SUPERSEDED for replication.**
+> The live `AGENTS.md` in the vault is now the authoritative operating manual: it contains
+> **four** workflows (Solve, Reflect, Navigate, Learn) plus codified user rules, while this
+> spec still embeds the original one-workflow AGENTS.md (section 3). Replicating a fresh vault
+> from this spec verbatim would silently lose Reflect, Navigate, Learn, and several user-set
+> rules. To replicate a fresh vault: copy the live vault's `AGENTS.md`, `HANDOFF.md`, `wiki/`
+> tree, and `scripts/` (run `healthcheck.sh`, not `.ps1`, on non-Windows hosts). Use this spec
+> only for historical context and file formats.
+
 ---
 
 ## 1. What MindVault is

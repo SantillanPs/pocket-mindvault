@@ -41,16 +41,29 @@ days_ts() { date -d "$1" +%s 2>/dev/null || echo ""; }
 echo "=== MindVault healthcheck ($(date '+%Y-%m-%d %H:%M')) ==="
 
 # 1. Newest dated entry in log.md
-log_entry="$(grep -oE '\[[0-9]{4}-[0-9]{2}-[0-9]{2}( [0-9]{2}:[0-9]{2})?\]' log.md | head -1)"
-if [ -n "$log_entry" ]; then
-  entry="${log_entry#\[}"; entry="${entry%\]}"
-  log_ts="$(days_ts "$entry")"
-  if [ -n "$log_ts" ]; then
-    h=$(( (NOW - log_ts) / 3600 ))
-    echo "log entry    : $entry (${h}h ago)"
-    if [ "$h" -gt "$THRESHOLD_HOURS" ]; then add_problem "log.md has no entry in $THRESHOLD_HOURS hours (newest: $entry)"; fi
+# Scan ALL dated entries: take the true newest by timestamp (head -1 used to
+# assume prepend-only discipline, so appended entries escaped the check) and
+# verify the file is actually reverse-chronological (newest at top).
+log_entries="$(grep -oE '\[[0-9]{4}-[0-9]{2}-[0-9]{2}( [0-9]{2}:[0-9]{2})?\]' log.md || true)"
+if [ -n "$log_entries" ]; then
+  newest=""; newest_ts=0; prev_ts=0; first=1; violations=0
+  while IFS= read -r e; do
+    entry="${e#\[}"; entry="${entry%\]}"
+    ts="$(days_ts "$entry")"
+    [ -n "$ts" ] || continue
+    if [ "$ts" -gt "$newest_ts" ]; then newest="$entry"; newest_ts="$ts"; fi
+    if [ "$first" -eq 0 ] && [ "$ts" -gt "$prev_ts" ]; then violations=$((violations + 1)); fi
+    prev_ts="$ts"; first=0
+  done <<< "$log_entries"
+  count="$(printf '%s\n' "$log_entries" | wc -l)"
+  if [ -n "$newest" ]; then
+    h=$(( (NOW - newest_ts) / 3600 ))
+    echo "log entry    : $newest (${h}h ago, $count entries)"
+    if [ "$h" -gt "$THRESHOLD_HOURS" ]; then add_problem "log.md has no entry in $THRESHOLD_HOURS hours (newest: $newest)"; fi
+    if [ "$violations" -gt 0 ]; then add_problem "log.md is not reverse-chronological ($violations entry/ies out of order - newest must be at top)"; fi
   else
-    echo "log entry    : $entry (unparseable date)"
+    echo "log entry    : unparseable dates"
+    add_problem "log.md contains no parseable dated entries"
   fi
 else
   echo "log entry    : NONE FOUND"
@@ -162,15 +175,27 @@ else
   add_problem "wiki/predictions.md is missing"
 fi
 
-# 6b. independence score: solutions that carry themselves (ai-absent)
-ai_absent=0; ai_present_list=""
+# 6b. independence score: solutions that carry themselves (ai-absent).
+#     ai-present only fails while the fix is NOT yet encoded into the
+#     environment: deployed_to must name an existing rule/script/wiki file.
+#     Once encoded, ai-present is a reminder, not a repair item.
+ai_absent=0; unencoded_list=""
 for f in wiki/solutions/*.md; do
   [ -e "$f" ] || continue
-  if grep -qE '^mechanism:[[:space:]]*ai-absent' "$f"; then ai_absent=$((ai_absent + 1))
-  elif grep -qE '^mechanism:[[:space:]]*ai-present' "$f"; then ai_present_list="$ai_present_list $(basename "$f")"; fi
+  if grep -qE '^mechanism:[[:space:]]*ai-absent' "$f"; then ai_absent=$((ai_absent + 1)); continue; fi
+  if grep -qE '^mechanism:[[:space:]]*ai-present' "$f"; then
+    deployed="$(sed -nE 's/^deployed_to:[[:space:]]*(.*)/\1/p' "$f")"
+    encoded=0
+    for tok in $deployed; do
+      case "$tok" in
+        AGENTS.md|scripts/*|wiki/*) [ -e "$VAULT/$tok" ] && encoded=1 ;;
+      esac
+    done
+    if [ "$encoded" -eq 0 ]; then unencoded_list="$unencoded_list $(basename "$f")"; fi
+  fi
 done
 echo "independence  : $ai_absent/$sol_count solutions carry themselves (ai-absent)"
-if [ -n "$ai_present_list" ]; then add_problem "AI-dependent solutions - encode into the environment:$ai_present_list"; fi
+if [ -n "$unencoded_list" ]; then add_problem "AI-dependent solutions not yet encoded into the environment (deployed_to must name an existing rule/script/file):$unencoded_list"; fi
 
 # 6c. dormant decay: past-due dormant files compress to one line and archive
 for f in wiki/dormant/*.md; do
