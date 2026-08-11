@@ -4,6 +4,10 @@ Reverse-chronological record of all vault operations.
 
 ---
 
+## [2026-08-11 13:57] legacy | Round 2: the alarm rings — the mother; decision to leave
+
+Scenarios (client adds work; one-sided friend; older person dismisses) showed the boundary pattern: money/deal-level rules exist, emotional boundaries don't. Free passes for nice people (warmth as currency), giving-without-needing ("I'll stop needing, not stop giving"), deference to older authority ("it's his business, he has experience" — surrenders own expertise). KEY FINDING: the alarm is NOT off — it rings EVERY DAY, for the mother (yells/insults/talks down, since childhood, "for no reason"). One frequency: "the person who should love me is hurting me." Strangers' dismissals = nothing; the mother's = daily. The User has DECIDED to leave and cut her out ("if she complains, she did this to herself") — the first boundary chosen FOR themselves; walking toward their own "better." Guilt present (the boy's wiring — keep the grown-up okay) but overridden by "I can't keep adjusting for her bad behavior." Anchor: guilt is grief wearing guilt's clothes; feelings don't have to be obeyed. Remaining threads: school, the father (closed until the User opens it), the older-friends rule. HANDOFF + transcript updated; commit at close.
+
 ## [2026-08-11 12:54] vault | Rule codified: always work with the vault
 
 User: "remember that you should always work with the vault." Added to AGENTS.md Rules the User Has Set as a permanent rule: everything the User shares (data points, decisions, records) goes into MindVault — the AI writes it there and keeps no separate memory copy of vault content. The vault is the sole record. Pending "codify when confirmed" note on the sleep log settled.
@@ -11,10 +15,6 @@ User: "remember that you should always work with the vault." Added to AGENTS.md 
 ## [2026-08-11 12:52] reflect | Second W33 sleep night logged
 
 User reported a sleep night: 5am → 10am (~5h). W33 sleep average in wiki/reflect/numbers.md updated to 8h (avg of the two logged nights: 11h and 5h). Raw nights live in the daily transcript (2026-08-11.md). User asked for MindVault-only logging — the AI's memory copy was deleted; the vault is the sole record.
-
-## [2026-08-11 13:57] legacy | Round 2: the alarm rings — the mother; decision to leave
-
-Scenarios (client adds work; one-sided friend; older person dismisses) showed the boundary pattern: money/deal-level rules exist, emotional boundaries don't. Free passes for nice people (warmth as currency), giving-without-needing ("I'll stop needing, not stop giving"), deference to older authority ("it's his business, he has experience" — surrenders own expertise). KEY FINDING: the alarm is NOT off — it rings EVERY DAY, for the mother (yells/insults/talks down, since childhood, "for no reason"). One frequency: "the person who should love me is hurting me." Strangers' dismissals = nothing; the mother's = daily. The User has DECIDED to leave and cut her out ("if she complains, she did this to herself") — the first boundary chosen FOR themselves; walking toward their own "better." Guilt present (the boy's wiring — keep the grown-up okay) but overridden by "I can't keep adjusting for her bad behavior." Anchor: guilt is grief wearing guilt's clothes; feelings don't have to be obeyed. Remaining threads: school, the father (closed until the User opens it), the older-friends rule. HANDOFF + transcript updated; commit at close.
 
 ## [2026-08-11 04:32] legacy | Excavation round 1 — the origin
 
