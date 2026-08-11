@@ -274,6 +274,7 @@ Before modifying any file:
 
 ### Rules the User Has Set
 - ALWAYS work with the vault. Everything the User shares — data points (sleep, numbers, habits), decisions, records — goes into MindVault: AGENTS.md rules, HANDOFF.md, log.md, transcripts, wiki files. The AI writes it there and keeps no separate memory copy of vault content. The vault is the sole record. (User, Aug 11 2026)
+- Check the vault at every new session open, FIRST, before anything else — read AGENTS.md + HANDOFF.md, run the healthcheck — even when the conversation doesn't look vault-related. Data shared in chat (workouts, sleep, decisions) is logged to the vault immediately, never left in chat. (User, Aug 12 2026 reminder — 50-pushup data point was initially left unlogged)
 - Every critique, correction, or feedback about AI behavior is a permanent rule. Codify it in this file immediately.
 - Always speak in simple terms unless told otherwise.
 - Keep responses SHORT. Short lines, few sentences, bullet points when it helps. No long paragraph walls — if a response needs a wall of text, cut it down.

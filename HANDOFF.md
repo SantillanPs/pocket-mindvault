@@ -18,6 +18,8 @@ Session state lives here, on disk — never only in the AI's memory. Read at eve
 
 ## Last Known State
 
+- 2026-08-12 (workout log): User did 50 pushups (~00:00) — second workout session of W33. wiki/reflect/numbers.md updated: workout 1 → 2 sessions, one line now "5 muscle-ups, 5×30s dead hangs; 50 pushups". User reminded: check the vault at every new session open, first. Codified in AGENTS.md Rules the User Has Set.
+
 - 2026-08-11 (goal grilling, 9th session): the goal's order resolved in the User's own words — become first, give later; the "help people" legacy is the harvest, not the seed ("you don't coach bodybuilding as a person who never lifted a single weight"). Real wants named: OUT + MONEY FREEDOM (exits; no plan yet — Solve next). Frontend = need, not want. Wanting-authority: "I walk, I see" — God reveals inside the walking. Grilling transcript in today's file. Communication lesson recurred: plain, short, concrete words only.
 
 - 2026-08-11 (vault rule codified): User: "remember that you should always work with the vault." Codified in AGENTS.md Rules the User Has Set — all shared data/decisions/records go into MindVault; the AI writes them there and keeps no separate memory copy of vault content. The pending "codify when confirmed" note on the sleep log is now confirmed and settled.
