@@ -4,6 +4,10 @@ Reverse-chronological record of all vault operations.
 
 ---
 
+## [2026-08-11 12:52] reflect | Second W33 sleep night logged
+
+User reported a sleep night: 5am → 10am (~5h). W33 sleep average in wiki/reflect/numbers.md updated to 8h (avg of the two logged nights: 11h and 5h). Raw nights live in the daily transcript (2026-08-11.md). User asked for MindVault-only logging — the AI's memory copy was deleted; the vault is the sole record.
+
 ## [2026-08-11 04:32] legacy | Excavation round 1 — the origin
 
 Grilled the User (4 rounds, ask-user-questions) on the definition of "better" — the User called it two days early ("I don't feel like it's right for me"). Findings: the four adjectives (healthier/calmer/happier/smarter) were AI-suggested and never owned; the User's felt "better" is a STATE — "head clear as day, thinking at full power" — peak performance, not wellness; rest = armor for peak (the guard was right, wrong reason); peak = the vehicle; goal = "changed something" (legacy/impact, still forming); "who I should be" RETIRED as the yardstick (a ghost that could never be satisfied). Rewrote the "What better means" block in AGENTS.md in the User's words (conduct rules kept). Mission line untouched (User unsure). NEW MODE: the legacy thread needs more than grilling — the User asked for something more psychological / therapy-like to extract the feelings. Standing thread: name the standard the next time the User is at peak. HANDOFF updated; commit at close.
