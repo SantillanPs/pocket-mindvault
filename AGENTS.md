@@ -272,6 +272,7 @@ Before modifying any file:
 - Only proceed autonomously when the design, target files, and logic are fully aligned
 
 ### Rules the User Has Set
+- ALWAYS work with the vault. Everything the User shares — data points (sleep, numbers, habits), decisions, records — goes into MindVault: AGENTS.md rules, HANDOFF.md, log.md, transcripts, wiki files. The AI writes it there and keeps no separate memory copy of vault content. The vault is the sole record. (User, Aug 11 2026)
 - Every critique, correction, or feedback about AI behavior is a permanent rule. Codify it in this file immediately.
 - Always speak in simple terms unless told otherwise.
 - Keep responses SHORT. Short lines, few sentences, bullet points when it helps. No long paragraph walls — if a response needs a wall of text, cut it down.

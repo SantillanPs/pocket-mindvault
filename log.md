@@ -4,6 +4,10 @@ Reverse-chronological record of all vault operations.
 
 ---
 
+## [2026-08-11 12:54] vault | Rule codified: always work with the vault
+
+User: "remember that you should always work with the vault." Added to AGENTS.md Rules the User Has Set as a permanent rule: everything the User shares (data points, decisions, records) goes into MindVault — the AI writes it there and keeps no separate memory copy of vault content. The vault is the sole record. Pending "codify when confirmed" note on the sleep log settled.
+
 ## [2026-08-11 12:52] reflect | Second W33 sleep night logged
 
 User reported a sleep night: 5am → 10am (~5h). W33 sleep average in wiki/reflect/numbers.md updated to 8h (avg of the two logged nights: 11h and 5h). Raw nights live in the daily transcript (2026-08-11.md). User asked for MindVault-only logging — the AI's memory copy was deleted; the vault is the sole record.
