@@ -4,4 +4,4 @@ The mirror's raw material. One row per week, newest at the top. ~5 minutes at ea
 
 | Week | Weight (kg) | Sleep (avg h) | Spending (total) | Good days (out of 7) | Screen (avg h/day) | Workout (sessions) | One line |
 |---|---|---|---|---|---|---|---|
-| 2026-W33 | | 8 (2/7 nights) | | | | 2 | 5 muscle-ups, 5×30s dead hangs; 50 pushups |
+| 2026-W33 | | 8 (3/7 nights) | | | | 3 | 5 muscle-ups, 5×30s dead hangs; 50 pushups; 15 pushups + 5 muscle-ups |

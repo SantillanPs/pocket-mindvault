@@ -2,6 +2,10 @@
 
 Reverse-chronological record of all vault operations.
 
+## [2026-08-12 14:20] reflect | Daily data logged — sleep 2am→10am (~8h), 15 pushups + 5 muscle-ups
+
+Daily micro-log row for 08-12 completed (sleep + second workout of the day). W33 numbers updated: sleep avg 8h (3/7 nights, up from 2/7), workout 3 sessions. Transcript appended.
+
 ---
 
 ## [2026-08-12 14:11] reflect | Habit/pattern review applied — all five changes

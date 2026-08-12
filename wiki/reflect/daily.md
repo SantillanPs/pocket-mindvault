@@ -4,6 +4,6 @@ The raw material behind the weekly numbers. One row per day, newest at the top, 
 
 | Date | Sleep (onset→wake) | Workout | One line |
 |---|---|---|---|
-| 2026-08-12 | | 50 pushups | |
+| 2026-08-12 | 2am→10am (~8h) | 50 pushups (00:00); 15 pushups, 5 muscle-ups (morning) | |
 | 2026-08-11 | 5am→10am (~5h) | | |
 | 2026-08-10 | 12am→11am (~11h) | 5 muscle-ups, 5×30s dead hangs | |
