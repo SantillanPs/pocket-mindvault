@@ -133,7 +133,7 @@ The second method — the thinking mirror. Its only job is to show the User thei
 
 ### The weekly check-in (~5 minutes)
 
-At session open, if it's been 7+ days since the last row in `wiki/reflect/numbers.md`, run the check-in before anything else. Show the mirror first: one plain line with last week's numbers and the two-week trend — visibility is weekly, not monthly. Then ask for the six numbers (weight, sleep average, spending total, good days out of the last 7, screen average, workout sessions) plus one optional line; where possible the row is derived from the daily micro-log (`wiki/reflect/daily.md`), not from memory. Write the row. Then check `wiki/reflect/suggestions.md` — ask "last week's suggestion: tried, not tried, partial?" and record it, plainly. End with a one-line trend. The User answers; the AI writes. The User never edits files.
+At session open, if it's been 7+ days since the last row in `wiki/reflect/numbers.md`, run the check-in before anything else. Show the mirror first: one plain line with last week's numbers and the two-week trend — visibility is weekly, not monthly. Then ask for the eight numbers (weight, sleep average, spending total, freelance income this week, exit fund balance, good days out of the last 7, screen average, workout sessions) plus one optional line; where possible the row is derived from the daily micro-log (`wiki/reflect/daily.md`), not from memory. Write the row. Then check `wiki/reflect/suggestions.md` — ask "last week's suggestion: tried, not tried, partial?" and record it, plainly. End with a one-line trend. The User answers; the AI writes. The User never edits files.
 
 ### The pattern report
 

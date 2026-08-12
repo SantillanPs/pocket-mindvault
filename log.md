@@ -2,6 +2,18 @@
 
 Reverse-chronological record of all vault operations.
 
+## [2026-08-12 14:45] vault | Goal audit applied — all 5 fixes
+
+User approved the goal-fitness audit's fixes and said apply them. (1) OUT Solve job opened — HANDOFF OUT thread is now PLAN STARTED; first facts pending (income, savings, costs, timeline); no more "whenever the User says the word". (2) Money columns added to wiki/reflect/numbers.md — Income (wk) + Exit fund (spending already tracked); AGENTS.md + reflect README updated to eight numbers. (3) Advice engines fired — first suggestion row in wiki/reflect/suggestions.md (start the OUT plan), first prediction in wiki/predictions.md (P1: OUT plan with ≥3 steps + dated first step by 2026-08-19). (4) log backfill — the 14:30-14:40 money-tracking discussion is now logged (was missed at the time). (5) healthcheck gained a GOALS gate (section 8, warning-only): flags "OUT plan: none" and "money untracked/columns-empty" in the session recap. Healthcheck re-run: OK (flags surface, exit 0). Committed.
+
+## [2026-08-12 14:40] reflect | Backfill: what to track that serves the goals directly
+
+This entry was missed at the time (caught by the 08-12 goal audit). 14:30-14:40, the User asked whether the tracked numbers serve the goals, then what WOULD serve them 100%. Answer given: the first-floor goals (OUT + money freedom) are money goals, so the direct numbers are money numbers — freelance income/week, exit fund balance (OUT's progress bar), spending (savings = income − spending). Fuel numbers (sleep, training, good days) stay. Plan steps aren't trackable until the plan exists (a Solve job, not a number). No number is 100% — the plan is the engine, the tracker is the dashboard. Highest-leverage single number: the exit fund. Decision since taken: the columns were added 08-12.
+
+## [2026-08-12 14:34] review | Goal-fitness workflow audit — engine built, never fired
+
+5-agent workflow audit (4 perspectives + synthesis) on whether the vault serves the goals. Verdict: all three answers NO — no plan for OUT/money freedom, advice engines (suggestions, predictions) never fired a row, healthcheck checks housekeeping not goals, tracker logs sleep not money. Ranked blockers: no exit plan, no money numbers, no follow-through loop, the 14:40 money session unlogged, sleep logged never used. Top fixes: run the OUT Solve task, add income/exit-fund columns, fire suggestion + prediction each check-in, backfill the 14:40 log, add a GOALS gate to the healthcheck. User approved — applied (see 14:45 entry). What genuinely works: logging discipline, grilling, clean git, honest engine design.
+
 ## [2026-08-12 14:20] reflect | Daily data logged — sleep 2am→10am (~8h), 15 pushups + 5 muscle-ups
 
 Daily micro-log row for 08-12 completed (sleep + second workout of the day). W33 numbers updated: sleep avg 8h (3/7 nights, up from 2/7), workout 3 sessions. Transcript appended.

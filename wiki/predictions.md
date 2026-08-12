@@ -10,3 +10,4 @@ An unresolved prediction counts as a miss on its due date. An open prediction ol
 
 | ID | Date | Prediction | Due | Outcome | Verdict |
 |----|------|------------|-----|---------|---------|
+| P1 | 2026-08-12 | If we build the OUT plan this week, it will have at least 3 concrete steps and a dated first step by the due date. | 2026-08-19 | | |

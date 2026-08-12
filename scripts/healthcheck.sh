@@ -239,6 +239,51 @@ else
   add_problem "wiki/reflect/daily.md is missing"
 fi
 
+# 8. GOALS GATE - does the vault actively point at the goals? Warning-only:
+#    these flags surface in the recap at session open; they never block the
+#    session (the fixes need the User, and the vault suggests, never demands).
+WARNINGS=0; WARNING_LIST=""
+add_warning() {
+  WARNINGS=$((WARNINGS + 1))
+  WARNING_LIST="$WARNING_LIST
+  - $1"
+}
+
+# 8a. OUT exit plan: does it exist? A plan is real when the OUT thread in
+#     HANDOFF.md carries the literal marker  OUTPLAN-DONE: <date>  (set when
+#     the Solve job produces the plan), or an exit/out solution file exists.
+out_plan=""
+if grep -q 'OUTPLAN-DONE:' HANDOFF.md 2>/dev/null; then out_plan="handoff"; fi
+if ls wiki/solutions/*exit* wiki/solutions/*out* 2>/dev/null | grep -q .; then out_plan="solution"; fi
+if [ -z "$out_plan" ]; then
+  add_warning "GOALS: OUT plan does not exist yet (no OUTPLAN-DONE marker in HANDOFF, no exit-plan solution) - the Solve job is open, not done"
+else
+  echo "goals gate    : OUT plan present ($out_plan)"
+fi
+
+# 8b. Money tracked? numbers.md must carry Income + Exit fund columns, and the
+#     newest weekly row must have numbers in them (empty = untracked).
+money_state="ok"
+if ! grep -q 'Income' wiki/reflect/numbers.md || ! grep -q 'Exit fund' wiki/reflect/numbers.md; then
+  add_warning "GOALS: money untracked - numbers.md has no Income/Exit fund columns (add them and start filling)"
+  money_state="missing-columns"
+else
+  newest_row="$(grep -E '^\| 20[0-9]{2}-W' wiki/reflect/numbers.md | head -1)"
+  inc="$(printf '%s' "$newest_row" | awk -F'|' '{gsub(/^[ \t]+|[ \t]+$/, "", $6); print $6}')"
+  exitf="$(printf '%s' "$newest_row" | awk -F'|' '{gsub(/^[ \t]+|[ \t]+$/, "", $7); print $7}')"
+  if [ -z "$inc" ] || [ -z "$exitf" ]; then
+    add_warning "GOALS: money columns exist but the newest weekly row has no income/exit-fund numbers yet"
+    money_state="columns-empty"
+  fi
+fi
+if [ "$money_state" = "ok" ]; then echo "goals gate    : money tracked (income + exit fund in newest row)"; fi
+
+if [ "$WARNINGS" -gt 0 ]; then
+  echo ""
+  echo "GOALS GATE - recap flags (not repair items):"
+  printf '%s\n' "$WARNING_LIST"
+fi
+
 echo ""
 if [ "$PROBLEMS" -eq 0 ]; then
   echo "HEALTHCHECK OK - all heartbeats within $THRESHOLD_HOURS hours."
