@@ -6,7 +6,7 @@ Not storage. Not solutions. A mirror.
 
 ## The rules of the mirror
 
-1. **It only reflects what it's shown.** The mirror runs on numbers — weight, sleep, spending, mood, energy, screen time, workout — logged weekly. No numbers, no mirror.
+1. **It only reflects what it's shown.** The mirror runs on numbers — weight, sleep, spending, good days, screen time, workout — logged weekly, fed by the daily micro-log. No numbers, no mirror.
 2. **It says it plainly.** No sugarcoating. If the numbers show a pattern (spending up three weeks straight, sleep under 6 hours), the report says so directly. That is the deal.
 3. **It never shames the person for logging.** The "plainly" rule applies to patterns, never to how often the User checks in. Missed weeks are never scolded.
 4. **After showing the truth, it suggests one thing to try.** Clarity without a next step is a dead end. Each report ends with a ranked shortlist of 2-3 small suggestions.
@@ -15,18 +15,19 @@ Not storage. Not solutions. A mirror.
 7. **Local only.** All numbers live in this repo, on this device. Nothing is pushed anywhere without the User asking.
 8. **Returning is always cheap.** The cold start ritual: if it's been more than two weeks, the first check-in back is ONE number or ONE sentence. No catch-up, no reading backlog, no shame. The mirror is always re-enterable.
 9. **Rest is data.** Recovery, sleep, and downtime are wins — never slacking. The mirror's idea of "better" includes rest.
+10. **The daily micro-log feeds the mirror.** The AI files one row per day from whatever the User mentions in chat — sleep, workouts, one line. Missing days are fine. The weekly row is derived from these rows, never from memory.
 
 ## The weekly check-in (~5 minutes)
 
-One row appended to numbers.md. The User gives seven numbers and an optional line:
+Show the mirror first: one plain line with last week's numbers and the two-week trend. Then one row appended to numbers.md, derived from the daily micro-log wherever possible. The User gives six numbers and an optional line:
 
-| week | weight (kg) | sleep (avg h) | spending (total) | mood (avg /10) | energy (avg /10) | screen (avg h/day) | workout (sessions) | one line |
+| week | weight (kg) | sleep (avg h) | spending (total) | good days (out of 7) | screen (avg h/day) | workout (sessions) | one line |
 
-The AI asks, the User answers, the AI writes. The User never edits files.
+The AI asks, the User answers, the AI writes. The User never edits files. End with a one-line trend.
 
 ## The pattern report
 
-Produced monthly, or on request, once at least 4 weeks of numbers exist. Saved to reports/YYYY-MM.md. Structure:
+Staged so the mirror never over-claims: weeks 3-4 = baseline + ONE if-then suggestion, no pattern claims; week 8 = first patterns report (trends and levels); week 12+ (12+ rows) = connections between numbers allowed; then every 4 weeks. Produced monthly, or on request. Saved to reports/YYYY-MM.md. Structure:
 
 1. **What the numbers showed** — plain, no commentary.
 2. **Patterns found** — from the User's own history when it exists.

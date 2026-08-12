@@ -11,7 +11,7 @@ The MindVault exists so that the User can become better — optimize growth, lea
 The vault serves it through four methods:
 
 1. **Solve** — the problem-solving machine. You have a problem → AI researches solutions → You pick what works → AI saves it permanently. Full workflow below. Fixing things makes better.
-2. **Reflect** — the thinking mirror. Weekly numbers → the mirror shows patterns plainly → suggests one small thing to try → checks follow-through. Full workflow below. Clarity makes better.
+2. **Reflect** — the thinking mirror. Daily micro-log + weekly numbers → the mirror shows patterns plainly → suggests one small thing to try → checks follow-through. Full workflow below. Clarity makes better.
 3. **Navigate** — entering a domain the User doesn't know without getting lost. Map it, get the words, ask the right questions. Full workflow below. Knowing what you don't know makes better.
 4. **Learn** — sustained, interest-driven learning without dying of scattered interests. Interest → need → thread → real-world proof. Full workflow below. Used learning makes better.
 
@@ -36,7 +36,7 @@ The vault is designed so that new methods can be added later without restructuri
 ```
 wiki/
   solutions/     ← One file per solved problem (Solve method)
-  reflect/       ← The thinking mirror: weekly numbers, suggestions, pattern reports
+  reflect/       ← The thinking mirror: daily micro-log, weekly numbers, suggestions, pattern reports
   navigate/      ← Entering unknown domains: the method, plus a library of domain maps
   learn/         ← Interest → need → thread → real-world proof: threads, shelf, daily minute
   dormant/       ← Unvalidated research, awaiting validation or recurrence
@@ -133,14 +133,21 @@ The second method — the thinking mirror. Its only job is to show the User thei
 
 ### The weekly check-in (~5 minutes)
 
-At session open, if it's been 7+ days since the last row in `wiki/reflect/numbers.md`, run the check-in before anything else: ask for the seven numbers (weight, sleep average, spending total, mood average, energy average, screen average, workout sessions) plus one optional line. Write the row. Then check `wiki/reflect/suggestions.md` — ask "last week's suggestion: tried, not tried, partial?" and record it, plainly. The User answers; the AI writes. The User never edits files.
+At session open, if it's been 7+ days since the last row in `wiki/reflect/numbers.md`, run the check-in before anything else. Show the mirror first: one plain line with last week's numbers and the two-week trend — visibility is weekly, not monthly. Then ask for the six numbers (weight, sleep average, spending total, good days out of the last 7, screen average, workout sessions) plus one optional line; where possible the row is derived from the daily micro-log (`wiki/reflect/daily.md`), not from memory. Write the row. Then check `wiki/reflect/suggestions.md` — ask "last week's suggestion: tried, not tried, partial?" and record it, plainly. End with a one-line trend. The User answers; the AI writes. The User never edits files.
 
 ### The pattern report
 
-Monthly, or on request, once 4+ weeks of numbers exist. Write to `wiki/reflect/reports/YYYY-MM.md`:
+Staged, so the mirror never over-claims. Write to `wiki/reflect/reports/YYYY-MM.md`:
+
+- **Weeks 3-4:** first report = baseline + ONE if-then suggestion ("after something you already do, do the tiny thing"). No "patterns" claims yet.
+- **Week 8:** first patterns report — trends and levels only, from the User's own history first. Proven playbooks only when the data shows no clear pattern.
+- **Week 12+ (with 12+ rows):** connections between numbers allowed (e.g. sleep → good days) — named as observations, never as proof.
+- **Then every 4 weeks.**
+
+Each report keeps the same shape:
 
 1. **What the numbers showed** — plain, no commentary.
-2. **Patterns found** — from the User's own history first. Proven playbooks only when the data shows no clear pattern.
+2. **Patterns found** — trends and levels, honestly gated.
 3. **A ranked shortlist of 2-3 small suggestions to try** — each with the mechanism: why it might work.
 4. **Follow-through review** — what was suggested before, what was tried, what the numbers prove.
 
@@ -153,6 +160,7 @@ The report speaks plainly. It never punishes. It ends with what to try.
 - Never shames a gap. Returning after any silence costs one number or one sentence.
 - Local only. Nothing leaves this device without the User asking.
 - No bets, no stakes, no penalties. The truth, repeated, is the mechanism.
+- The daily micro-log feeds the mirror: the AI files one row per day from whatever the User mentions in chat. Missing days are fine — the weekly row is derived from the rows, never from memory.
 
 ---
 
@@ -208,10 +216,10 @@ When a new interest appears, capture it to the shelf and ask once, plainly: "Wha
 
 ## Prediction Ledger
 
-`wiki/predictions.md` holds one line per bet: id, date, prediction, due date, stake, outcome, verdict. Rules:
+`wiki/predictions.md` holds one line per guess: id, date, prediction, due date, outcome, verdict. Rules:
 
-- Before the User validates a fix, write the prediction to the ledger.
-- Every prediction carries a real stake — money, a blocked hour of time, or a public commitment. No stakes, no experiment.
+- Before the User tries something, write the prediction to the ledger — a dated, falsifiable, numeric guess ("if you do X, sleep rises at least half an hour within 3 weeks").
+- No stakes, no teeth. The User reports yes/no on the due date. Same honesty, no bets — matches the no-bets design choice.
 - The User reports the outcome; the AI never writes it.
 - Unresolved predictions count as misses on their due date. Checked at session open; overdue items surface in the recap.
 - Watchdog: an open prediction older than 21 days is STALLED — flush it back to dormant and reset the loop. The healthcheck flags these.

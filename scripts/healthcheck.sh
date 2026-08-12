@@ -154,7 +154,8 @@ if [ "$broken" -gt 0 ]; then add_problem "broken links ($broken):$broken_list"; 
 # 6a. prediction ledger: open bets, overdue, stalled (watchdog)
 if [ -f wiki/predictions.md ]; then
   open_bets=0; overdue_bets=0; stalled_bets=0; stalled_list=""
-  while IFS='|' read -r _ id _date _pred due _stake outcome verdict; do
+  # rows: | ID | Date | Prediction | Due | Outcome | Verdict | (stake-free since 2026-08-12)
+  while IFS='|' read -r id _date _pred due _outcome verdict; do
     id="$(printf '%s' "$id" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
     case "$id" in P[0-9]*) ;; *) continue ;; esac
     verdict="$(printf '%s' "$verdict" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
@@ -166,7 +167,7 @@ if [ -f wiki/predictions.md ]; then
       if [ "$dts" -lt "$NOW" ]; then overdue_bets=$((overdue_bets + 1)); fi
       if [ $((NOW - dts)) -gt $((21 * 86400)) ]; then stalled_bets=$((stalled_bets + 1)); stalled_list="$stalled_list $id"; fi
     fi
-  done < wiki/predictions.md
+  done < <(sed -E 's/^\|[[:space:]]*//; s/[[:space:]]*\|$//' wiki/predictions.md)
   echo "predictions   : $open_bets open, $overdue_bets overdue, $stalled_bets stalled"
   if [ "$overdue_bets" -gt 0 ]; then add_problem "$overdue_bets predictions overdue - resolve or mark as misses at session open"; fi
   if [ "$stalled_bets" -gt 0 ]; then add_problem "STALLED predictions ($stalled_list) older than 21 days - flush to dormant and reset"; fi
@@ -216,6 +217,27 @@ for f in wiki/solutions/*.md; do
     if [ -n "$rts" ] && [ "$rts" -lt "$NOW" ]; then add_problem "recheck overdue - surface in recap: $(basename "$f")"; fi
   fi
 done
+
+# 7. Daily micro-log freshness (weekly rhythm - a stalled log starves the mirror)
+if [ -f wiki/reflect/daily.md ]; then
+  newest_d="$(grep -oE '^\| [0-9]{4}-[0-9]{2}-[0-9]{2}' wiki/reflect/daily.md | head -1 | sed 's/^| //')"
+  if [ -n "$newest_d" ]; then
+    dts="$(days_ts "$newest_d")"
+    if [ -n "$dts" ]; then
+      days=$(( (NOW - dts) / 86400 ))
+      echo "daily log    : newest row $newest_d (${days}d ago)"
+      if [ "$days" -gt 7 ]; then add_problem "daily micro-log stale - no row in ${days}d (newest: $newest_d) - file a catch-up row at session open"; fi
+    else
+      echo "daily log    : unparseable date ($newest_d)"
+    fi
+  else
+    echo "daily log    : no dated rows"
+    add_problem "wiki/reflect/daily.md has no dated rows"
+  fi
+else
+  echo "daily log    : MISSING"
+  add_problem "wiki/reflect/daily.md is missing"
+fi
 
 echo ""
 if [ "$PROBLEMS" -eq 0 ]; then

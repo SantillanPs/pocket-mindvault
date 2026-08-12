@@ -4,6 +4,10 @@ Reverse-chronological record of all vault operations.
 
 ---
 
+## [2026-08-12 14:11] reflect | Habit/pattern review applied — all five changes
+
+User approved the read-only workflow review ("apply those changes"). Verdict for the record: the vault is the right tracking medium for this User (lowest friction, AI writes, sole record) with two conditions — mirror seen weekly, AI check-in reliable. Applied: (1) mirror line at every check-in (previous row + 2-week trend, closing trend line); (2) daily micro-log created — wiki/reflect/daily.md — AI files rows from chat mentions, weekly numbers derive from them (seeded with 3 backfilled days; W33 sleep now shows honest denominator 2/7 nights); (3) mood/energy weekly averages swapped for one "good days out of 7" count (schema updated across numbers.md, AGENTS.md, reflect README); (4) prediction ledger made stake-free (dated numeric guess, User reports yes/no; Stake column dropped; 21-day watchdog + blackout bet kept); (5) pattern report re-gated (weeks 3-4: baseline + ONE if-then suggestion; week 8: first patterns report; 12+ rows: connections; every 4 weeks after). Healthcheck gained a daily-log staleness check (7-day window) + prediction parser fixed for the new stake-free row shape. HANDOFF + transcript updated; commit at close.
+
 ## [2026-08-12 00:19] reflect | Workout logged: 50 pushups (W33 session 2); numbers.md updated; vault-check rule reinforced (reminder Aug 12)
 
 ## [2026-08-11 16:53] goal | Grilling: the goal sharpened — become → give; first floor named, plan next

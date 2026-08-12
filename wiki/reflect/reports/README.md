@@ -1,6 +1,11 @@
 # Pattern Reports
 
-Monthly, or on request, once at least 4 weeks of numbers exist. One file per month: reports/YYYY-MM.md.
+One file per month: reports/YYYY-MM.md. Staged so the mirror never over-claims:
+
+- Weeks 3-4: first report = baseline + ONE if-then suggestion. No "patterns" claims yet.
+- Week 8: first patterns report — trends and levels only.
+- Week 12+ (with 12+ rows): connections between numbers allowed — named as observations, never as proof.
+- Then every 4 weeks.
 
 Structure (from the mirror's rules):
 
