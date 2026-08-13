@@ -13,4 +13,4 @@ State is not a journal and not a memory database.
 - Do not duplicate durable knowledge here.
 - If there is no unfinished work, no state file is required.
 
-`HANDOFF.md` remains the compatibility entry point for current session continuity until the rest of the vault is migrated.
+The live record is `state/current.md` when unfinished work exists. `HANDOFF.md` is kept only as a compatibility pointer for tooling that still references it; it is not authoritative.

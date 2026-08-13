@@ -2,6 +2,10 @@
 
 MindVault is a long-term personal AI workspace. The User talks to the AI; the AI handles reasoning, retrieval, research, tools, and durable state. The repository is external state, not the AI's brain.
 
+## Purpose
+
+MindVault exists so that the User can become better — to optimize growth, learning, career, and life. It is a thinking mirror: pattern detection and self-clarity, not just storage. Success means behavior actually changes, not notes accumulating. Guardrails: "better" is broader than productive; rest counts as data; the vault suggests and never demands; it never shames. Deliberate focus domains: health & body, and money & time.
+
 ## Core architecture
 
 MindVault has seven layers:

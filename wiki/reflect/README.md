@@ -11,7 +11,7 @@ Reflect is **not** general memory and it is not a diary. Mnemosyne handles light
 3. **Analysis over bookkeeping.** The purpose of storing a number is to make a future comparison possible. If a record does not help analysis, don't create it.
 4. **Plain conclusions.** Say what the data supports directly. Distinguish observations from causal claims.
 5. **User history first.** Prefer patterns found in the User's own data. External playbooks are secondary.
-6. **Suggestions are experiments, not obligations.** A suggestion is worth recording only when tracking whether it was tried and what happened will improve future decisions.
+6. **Suggestions are experiments, not obligations.** A suggestion is worth recording only when tracking whether it was tried and what happened will improve future decisions. They are offered plainly: no bets, no penalties, no devil's advocate.
 7. **Rest is data.** Recovery and downtime are valid outcomes, not failures.
 8. **Cheap cold start.** After a gap, use whatever data exists. Never reconstruct missing history merely to make the dataset look complete.
 9. **Local by default.** Reflect data stays in this repository unless the User explicitly asks to move or share it.
