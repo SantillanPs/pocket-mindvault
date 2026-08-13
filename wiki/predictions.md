@@ -1,13 +1,28 @@
----
-type: Ledger
----
+# Optional Prediction / Experiment Ledger
 
-# Prediction Ledger
+Predictions are a tool for testing interventions, not a mandatory part of MindVault.
 
-One line per guess. Before the User tries something, the AI writes a dated, falsifiable, numeric guess here ("if you do X, sleep rises at least half an hour within 3 weeks"). No stakes, no teeth — the User just reports yes/no on the due date. Same honesty, no bets. This matches the User's no-bets design choice (grilling, 2026-08-09). The User reports the real outcome; the AI never writes it.
+Create a prediction only when a measurable expectation would make an experiment more informative. Do not create one for ordinary decisions, routine tasks, or every Solve session.
 
-An unresolved prediction counts as a miss on its due date. An open prediction older than 21 days is STALLED — it flushes back to dormant and the loop resets. Blackout bet: a dated prediction that the vault can run 14 days of AI silence with no regression — the independence proof. Checked at session open; overdue items surface in the recap.
+A useful prediction should be:
+
+- dated;
+- falsifiable;
+- tied to a specific action or intervention;
+- measurable enough to evaluate;
+- given a sensible due date.
+
+Outcomes should be recorded when they become known. An unresolved prediction is simply unresolved; do not manufacture a miss because the User did not report an outcome.
 
 | ID | Date | Prediction | Due | Outcome | Verdict |
-|----|------|------------|-----|---------|---------|
+|---|---|---|---|---|---|
 | P1 | 2026-08-12 | If we build the OUT plan this week, it will have at least 3 concrete steps and a dated first step by the due date. | 2026-08-19 | | |
+
+## What this is not
+
+- Not a betting system.
+- Not a compliance mechanism.
+- Not a session-opening ritual.
+- Not a required step before solving a problem.
+
+Use it when measurement helps learning. Otherwise, skip it.
