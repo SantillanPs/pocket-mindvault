@@ -2,6 +2,10 @@
 
 Reverse-chronological record of all vault operations.
 
+## [2026-08-13 12:10] vault | Strengths read — wiki/reflect/strengths.md written
+
+User asked what they're naturally good at. AI read the record (conversation history + vault: sessions, decisions, validations) and wrote wiki/reflect/strengths.md — five repeated patterns (self-observation, requirement-sensing, truth-testing, reality-testing, decisive editing), a plain-terms translation, and an honest caveat. Marked as observation-from-behavior, NOT a numbers pattern report (revisit at 12+ weekly rows). User asked to push it to GitHub. Committed; push pending credentials.
+
 ## [2026-08-12 14:45] vault | Goal audit applied — all 5 fixes
 
 User approved the goal-fitness audit's fixes and said apply them. (1) OUT Solve job opened — HANDOFF OUT thread is now PLAN STARTED; first facts pending (income, savings, costs, timeline); no more "whenever the User says the word". (2) Money columns added to wiki/reflect/numbers.md — Income (wk) + Exit fund (spending already tracked); AGENTS.md + reflect README updated to eight numbers. (3) Advice engines fired — first suggestion row in wiki/reflect/suggestions.md (start the OUT plan), first prediction in wiki/predictions.md (P1: OUT plan with ≥3 steps + dated first step by 2026-08-19). (4) log backfill — the 14:30-14:40 money-tracking discussion is now logged (was missed at the time). (5) healthcheck gained a GOALS gate (section 8, warning-only): flags "OUT plan: none" and "money untracked/columns-empty" in the session recap. Healthcheck re-run: OK (flags surface, exit 0). Committed.
