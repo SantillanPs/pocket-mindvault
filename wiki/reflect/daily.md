@@ -1,6 +1,8 @@
-# Daily Micro-Log
+# Reflect evidence
 
-The raw material behind the weekly numbers. One row per day, newest at the top, filed by the AI from whatever the User mentions in chat — no asking, no ceremony. Missing days are fine: no shame, no chase. The weekly numbers row in numbers.md is derived from these rows, so nothing gets forgotten and averages carry honest denominators.
+This file is an optional raw evidence archive for longitudinal metrics. It is **not a diary** and it is not required to have one row per day.
+
+The AI may append an observation when the User provides useful data and preserving the raw observation will make later aggregation or verification easier. Missing days are expected.
 
 | Date | Sleep (onset→wake) | Workout | One line |
 |---|---|---|---|
