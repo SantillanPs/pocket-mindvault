@@ -16,13 +16,13 @@ When a request may depend on previous context:
 
 The repository provides a lightweight deterministic first-pass search:
 
-```text
+```bash
 bash scripts/search_context.sh "query" [limit] [--archive|--all]
 ```
 
 Normal searches cover current state and high-value knowledge while deliberately excluding raw archives/transcripts. Use `--archive` or `--all` only when broader historical retrieval is justified.
 
-This is intentionally simple. It is a lexical retrieval layer, not semantic search. Mnemosyne remains responsible for personal memory, and a future semantic/ranked retriever should replace or sit above this command only if real usage demonstrates that lexical search is insufficient.
+This is intentionally simple. It is a lexical retrieval layer, not semantic search. Mnemosyne remains responsible for personal memory. Add semantic retrieval only if real usage demonstrates that lexical search is insufficient.
 
 ## Query by intent
 
@@ -66,10 +66,6 @@ If retrieval finds conflicting information, prefer the most recent validated sta
 
 If retrieval finds nothing, do not invent continuity. Ask the User or research the problem.
 
-## Future implementation
+## Agent integration
 
-A retrieval tool can eventually expose a single operation such as:
-
-`search_context(query, scope?, limit?)`
-
-The tool should search the appropriate sources and return concise ranked context with source paths and dates. The LLM should not need to know the physical directory layout to retrieve information.
+Pi should treat `search_context.sh` as the deterministic repository retrieval tool. The LLM decides when retrieval is warranted and what query expresses the user's intent; the script handles the mechanical search.
