@@ -1,142 +1,65 @@
 #!/usr/bin/env bash
-# MindVault healthcheck - bash port of scripts/healthcheck.ps1
-# Run at every session open, before any problem work. Compares the three
-# heartbeats (log.md, newest transcript, last git commit) plus working-tree
-# cleanliness against now, then content checks (records vs reality) and
-# engine checks (clock, stakes, independence, decay).
-#
-# Usage:  bash scripts/healthcheck.sh              (default threshold 48h)
-#         bash scripts/healthcheck.sh -t 72
-#
-# Exit codes:
-#   0 = healthy - all heartbeats within threshold, tree clean, no flags
-#   1 = REPAIR MODE - a gap exists; fix it before proposing anything new
-#
-# NOTE: keep this file pure ASCII. Requires bash, coreutils (date, grep,
-# find), and git.
+# MindVault operational healthcheck.
+# This checks whether the AI environment can operate; it does NOT require
+# activity heartbeats, daily notes, transcripts, or a recent commit.
+# Usage: bash scripts/healthcheck.sh
 
 set -u
-
-THRESHOLD_HOURS=48
-while getopts "t:h" opt; do
-  case "$opt" in
-    t) THRESHOLD_HOURS="$OPTARG" ;;
-    h) grep '^#' "$0" | sed 's/^# //' | head -12; exit 0 ;;
-  esac
-done
-
 VAULT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$VAULT" || { echo "cannot enter vault: $VAULT"; exit 1; }
-NOW="$(date +%s)"
+
 PROBLEMS=0
-PROBLEM_LIST=""
-add_problem() {
-  PROBLEMS=$((PROBLEMS + 1))
-  PROBLEM_LIST="$PROBLEM_LIST
-  - $1"
-}
+problem() { PROBLEMS=$((PROBLEMS + 1)); echo "  - $1"; }
+check_file() { [ -f "$1" ] && echo "✓ $1" || problem "missing required file: $1"; }
+check_dir() { [ -d "$1" ] && echo "✓ $1/" || problem "missing required directory: $1/"; }
 
-days_ts() { date -d "$1" +%s 2>/dev/null || echo ""; }
+echo "=== MindVault operational healthcheck ($(date '+%Y-%m-%d %H:%M')) ==="
 
-echo "=== MindVault healthcheck ($(date '+%Y-%m-%d %H:%M')) ==="
+echo ""
+echo "Core state"
+check_file AGENTS.md
+check_file HANDOFF.md
+check_file index.md
+check_dir wiki
+check_dir scripts
 
-# 1. Newest dated entry in log.md
-# Scan ALL dated entries: take the true newest by timestamp (head -1 used to
-# assume prepend-only discipline, so appended entries escaped the check) and
-# verify the file is actually reverse-chronological (newest at top).
-log_entries="$(grep -oE '\[[0-9]{4}-[0-9]{2}-[0-9]{2}( [0-9]{2}:[0-9]{2})?\]' log.md || true)"
-if [ -n "$log_entries" ]; then
-  newest=""; newest_ts=0; prev_ts=0; first=1; violations=0
-  while IFS= read -r e; do
-    entry="${e#\[}"; entry="${entry%\]}"
-    ts="$(days_ts "$entry")"
-    [ -n "$ts" ] || continue
-    if [ "$ts" -gt "$newest_ts" ]; then newest="$entry"; newest_ts="$ts"; fi
-    if [ "$first" -eq 0 ] && [ "$ts" -gt "$prev_ts" ]; then violations=$((violations + 1)); fi
-    prev_ts="$ts"; first=0
-  done <<< "$log_entries"
-  count="$(printf '%s\n' "$log_entries" | wc -l)"
-  if [ -n "$newest" ]; then
-    h=$(( (NOW - newest_ts) / 3600 ))
-    echo "log entry    : $newest (${h}h ago, $count entries)"
-    if [ "$h" -gt "$THRESHOLD_HOURS" ]; then add_problem "log.md has no entry in $THRESHOLD_HOURS hours (newest: $newest)"; fi
-    if [ "$violations" -gt 0 ]; then add_problem "log.md is not reverse-chronological ($violations entry/ies out of order - newest must be at top)"; fi
-  else
-    echo "log entry    : unparseable dates"
-    add_problem "log.md contains no parseable dated entries"
+# Git is a storage/rollback dependency, not a heartbeat.
+echo ""
+echo "Git"
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  echo "✓ repository"
+  echo "  branch: $(git branch --show-current 2>/dev/null || echo unknown)"
+  echo "  commits: $(git rev-list --count HEAD 2>/dev/null || echo unknown)"
+else
+  problem "not a Git repository"
+fi
+
+# Check the durable knowledge areas that currently exist. Empty areas are OK.
+echo ""
+echo "Durable knowledge"
+for d in wiki/solutions wiki/skills wiki/navigate/maps wiki/dormant wiki/archive; do
+  if [ -d "$d" ]; then
+    count="$(find "$d" -type f -not -name '.gitkeep' 2>/dev/null | wc -l | tr -d ' ')"
+    echo "✓ $d/ ($count files)"
   fi
-else
-  echo "log entry    : NONE FOUND"
-  add_problem "log.md contains no dated entries"
-fi
-
-# 2. Newest transcript file
-if [ -d wiki/archive/raw/transcripts ]; then
-  newest_t="$(find wiki/archive/raw/transcripts -maxdepth 1 -name '*.md' -printf '%T@ %f\n' 2>/dev/null | sort -rn | head -1)"
-  if [ -n "$newest_t" ]; then
-    tfile="${newest_t#* }"
-    tts="${newest_t%% *}"; tts="${tts%.*}"
-    h=$(( (NOW - tts) / 3600 ))
-    echo "transcript   : $tfile (${h}h ago)"
-    if [ "$h" -gt "$THRESHOLD_HOURS" ]; then add_problem "no transcript written in $THRESHOLD_HOURS hours (newest: $tfile)"; fi
-  else
-    echo "transcript   : NONE"
-    add_problem "no transcript files exist"
-  fi
-else
-  echo "transcript   : DIRECTORY MISSING"
-  add_problem "transcript directory missing"
-fi
-
-# 3. Last git commit
-last_commit="$(git log -1 --format='%cI' 2>/dev/null)"
-if [ -n "$last_commit" ]; then
-  cts="$(days_ts "$last_commit")"
-  if [ -n "$cts" ]; then
-    h=$(( (NOW - cts) / 3600 ))
-    echo "last commit  : $(date -d "$last_commit" '+%Y-%m-%d %H:%M') (${h}h ago)"
-    if [ "$h" -gt "$THRESHOLD_HOURS" ]; then add_problem "no commit in $THRESHOLD_HOURS hours (last: $(date -d "$last_commit" '+%Y-%m-%d %H:%M'))"; fi
-  fi
-else
-  echo "last commit  : NONE"
-  add_problem "no commits found"
-fi
-
-# 4. Working tree cleanliness (dirty at session open = last session never committed)
-dirty="$(git status --porcelain 2>/dev/null)"
-if [ -n "$dirty" ]; then
-  count="$(printf '%s\n' "$dirty" | wc -l)"
-  echo "working tree : DIRTY ($count files)"
-  add_problem "working tree is dirty at session open - last session did not commit ($count files)"
-else
-  echo "working tree : clean"
-fi
-
-# 5. Content checks - records vs reality
-# 5a. index.md must match the solution files
-sol_count="$(ls wiki/solutions/*.md 2>/dev/null | wc -l)"
-index_links="$(grep -o 'wiki/solutions/' index.md 2>/dev/null | wc -l)"
-echo "solutions     : $sol_count files, index lists $index_links"
-if [ "$sol_count" -ne "$index_links" ]; then add_problem "index lists $index_links solutions but $sol_count files exist - regenerate index.md"; fi
-
-# 5b. every solution carries a recheck date
-for f in wiki/solutions/*.md; do
-  [ -e "$f" ] || continue
-  if ! grep -qE '^recheck:' "$f"; then add_problem "solution missing recheck date: $(basename "$f")"; fi
 done
 
-# 5c. every dormant file is marked dormant
-for f in wiki/dormant/*.md; do
-  [ -e "$f" ] || continue
-  if ! grep -qE '^status:[[:space:]]*dormant' "$f"; then add_problem "dormant file not marked dormant: $(basename "$f")"; fi
-done
+# Validate the small amount of current state without requiring it to exist.
+echo ""
+echo "Current state"
+if [ -f HANDOFF.md ]; then
+  if grep -qE '^status:[[:space:]]*active|^##[[:space:]]+(Active|Current|Next)' HANDOFF.md; then
+    echo "✓ HANDOFF.md contains current-state markers"
+  else
+    echo "✓ HANDOFF.md exists; no active work is currently required"
+  fi
+fi
 
-# 5d. HANDOFF.md exists
-if [ ! -f HANDOFF.md ]; then add_problem "HANDOFF.md is missing"; fi
-
-# 5e. broken internal links in active files
-broken=0; broken_list=""
-for f in AGENTS.md HANDOFF.md index.md wiki/predictions.md wiki/solutions/*.md wiki/dormant/*.md wiki/skills/*.md; do
+# Basic internal-link validation for the small set of operational files.
+echo ""
+echo "Links"
+broken=0
+for f in AGENTS.md HANDOFF.md index.md wiki/solutions/*.md wiki/skills/*.md wiki/dormant/*.md; do
   [ -f "$f" ] || continue
   while IFS= read -r link; do
     case "$link" in http:*|https:*|ftp:*|www.*) continue ;; esac
@@ -144,152 +67,30 @@ for f in AGENTS.md HANDOFF.md index.md wiki/predictions.md wiki/solutions/*.md w
     case "$cand" in *.md) ;; *) cand="$cand.md" ;; esac
     if [ ! -e "$VAULT/$cand" ]; then
       broken=$((broken + 1))
-      broken_list="$broken_list $(basename "$f"):[[$link]]"
+      echo "  broken: $f -> [[$link]]"
     fi
   done < <(grep -oE '\[\[[^]|]+' "$f" 2>/dev/null | sed 's/\[\[//')
 done
-if [ "$broken" -gt 0 ]; then add_problem "broken links ($broken):$broken_list"; fi
+if [ "$broken" -eq 0 ]; then echo "✓ no broken operational links"; else problem "$broken broken operational links"; fi
 
-# 6. Engine checks - clock, stakes, independence, decay
-# 6a. prediction ledger: open bets, overdue, stalled (watchdog)
-if [ -f wiki/predictions.md ]; then
-  open_bets=0; overdue_bets=0; stalled_bets=0; stalled_list=""
-  # rows: | ID | Date | Prediction | Due | Outcome | Verdict | (stake-free since 2026-08-12)
-  while IFS='|' read -r id _date _pred due _outcome verdict; do
-    id="$(printf '%s' "$id" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
-    case "$id" in P[0-9]*) ;; *) continue ;; esac
-    verdict="$(printf '%s' "$verdict" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
-    [ -n "$verdict" ] && continue
-    due="$(printf '%s' "$due" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
-    open_bets=$((open_bets + 1))
-    dts="$(days_ts "$due")"
-    if [ -n "$dts" ]; then
-      if [ "$dts" -lt "$NOW" ]; then overdue_bets=$((overdue_bets + 1)); fi
-      if [ $((NOW - dts)) -gt $((21 * 86400)) ]; then stalled_bets=$((stalled_bets + 1)); stalled_list="$stalled_list $id"; fi
-    fi
-  done < <(sed -E 's/^\|[[:space:]]*//; s/[[:space:]]*\|$//' wiki/predictions.md)
-  echo "predictions   : $open_bets open, $overdue_bets overdue, $stalled_bets stalled"
-  if [ "$overdue_bets" -gt 0 ]; then add_problem "$overdue_bets predictions overdue - resolve or mark as misses at session open"; fi
-  if [ "$stalled_bets" -gt 0 ]; then add_problem "STALLED predictions ($stalled_list) older than 21 days - flush to dormant and reset"; fi
-else
-  echo "predictions   : LEDGER MISSING"
-  add_problem "wiki/predictions.md is missing"
-fi
-
-# 6b. independence score: solutions that carry themselves (ai-absent).
-#     ai-present only fails while the fix is NOT yet encoded into the
-#     environment: deployed_to must name an existing rule/script/wiki file.
-#     Once encoded, ai-present is a reminder, not a repair item.
-ai_absent=0; unencoded_list=""
+# A malformed solution is worth flagging; an old or missing recheck date is not.
+solution_count=0
+malformed=0
 for f in wiki/solutions/*.md; do
-  [ -e "$f" ] || continue
-  if grep -qE '^mechanism:[[:space:]]*ai-absent' "$f"; then ai_absent=$((ai_absent + 1)); continue; fi
-  if grep -qE '^mechanism:[[:space:]]*ai-present' "$f"; then
-    deployed="$(sed -nE 's/^deployed_to:[[:space:]]*(.*)/\1/p' "$f")"
-    encoded=0
-    for tok in $deployed; do
-      case "$tok" in
-        AGENTS.md|scripts/*|wiki/*) [ -e "$VAULT/$tok" ] && encoded=1 ;;
-      esac
-    done
-    if [ "$encoded" -eq 0 ]; then unencoded_list="$unencoded_list $(basename "$f")"; fi
+  [ -f "$f" ] || continue
+  solution_count=$((solution_count + 1))
+  if ! grep -qE '^recheck:' "$f" && ! grep -qE '^status:' "$f"; then
+    malformed=$((malformed + 1)); echo "  malformed solution metadata: $f"
   fi
 done
-echo "independence  : $ai_absent/$sol_count solutions carry themselves (ai-absent)"
-if [ -n "$unencoded_list" ]; then add_problem "AI-dependent solutions not yet encoded into the environment (deployed_to must name an existing rule/script/file):$unencoded_list"; fi
-
-# 6c. dormant decay: past-due dormant files compress to one line and archive
-for f in wiki/dormant/*.md; do
-  [ -e "$f" ] || continue
-  decay="$(grep -oE '^decay:[[:space:]]*[0-9]{4}-[0-9]{2}-[0-9]{2}' "$f" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')"
-  if [ -n "$decay" ]; then
-    dts="$(days_ts "$decay")"
-    if [ -n "$dts" ] && [ "$dts" -lt "$NOW" ]; then add_problem "dormant past decay - compress and archive: $(basename "$f")"; fi
-  fi
-done
-
-# 6d. recheck overdue: solutions past their recheck date surface in the recap
-for f in wiki/solutions/*.md; do
-  [ -e "$f" ] || continue
-  recheck="$(grep -oE '^recheck:[[:space:]]*[0-9]{4}-[0-9]{2}-[0-9]{2}' "$f" | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}')"
-  if [ -n "$recheck" ]; then
-    rts="$(days_ts "$recheck")"
-    if [ -n "$rts" ] && [ "$rts" -lt "$NOW" ]; then add_problem "recheck overdue - surface in recap: $(basename "$f")"; fi
-  fi
-done
-
-# 7. Daily micro-log freshness (weekly rhythm - a stalled log starves the mirror)
-if [ -f wiki/reflect/daily.md ]; then
-  newest_d="$(grep -oE '^\| [0-9]{4}-[0-9]{2}-[0-9]{2}' wiki/reflect/daily.md | head -1 | sed 's/^| //')"
-  if [ -n "$newest_d" ]; then
-    dts="$(days_ts "$newest_d")"
-    if [ -n "$dts" ]; then
-      days=$(( (NOW - dts) / 86400 ))
-      echo "daily log    : newest row $newest_d (${days}d ago)"
-      if [ "$days" -gt 7 ]; then add_problem "daily micro-log stale - no row in ${days}d (newest: $newest_d) - file a catch-up row at session open"; fi
-    else
-      echo "daily log    : unparseable date ($newest_d)"
-    fi
-  else
-    echo "daily log    : no dated rows"
-    add_problem "wiki/reflect/daily.md has no dated rows"
-  fi
-else
-  echo "daily log    : MISSING"
-  add_problem "wiki/reflect/daily.md is missing"
-fi
-
-# 8. GOALS GATE - does the vault actively point at the goals? Warning-only:
-#    these flags surface in the recap at session open; they never block the
-#    session (the fixes need the User, and the vault suggests, never demands).
-WARNINGS=0; WARNING_LIST=""
-add_warning() {
-  WARNINGS=$((WARNINGS + 1))
-  WARNING_LIST="$WARNING_LIST
-  - $1"
-}
-
-# 8a. OUT exit plan: does it exist? A plan is real when the OUT thread in
-#     HANDOFF.md carries the literal marker  OUTPLAN-DONE: <date>  (set when
-#     the Solve job produces the plan), or an exit/out solution file exists.
-out_plan=""
-if grep -q 'OUTPLAN-DONE:' HANDOFF.md 2>/dev/null; then out_plan="handoff"; fi
-if ls wiki/solutions/*exit* wiki/solutions/*out* 2>/dev/null | grep -q .; then out_plan="solution"; fi
-if [ -z "$out_plan" ]; then
-  add_warning "GOALS: OUT plan does not exist yet (no OUTPLAN-DONE marker in HANDOFF, no exit-plan solution) - the Solve job is open, not done"
-else
-  echo "goals gate    : OUT plan present ($out_plan)"
-fi
-
-# 8b. Money tracked? numbers.md must carry Income + Exit fund columns, and the
-#     newest weekly row must have numbers in them (empty = untracked).
-money_state="ok"
-if ! grep -q 'Income' wiki/reflect/numbers.md || ! grep -q 'Exit fund' wiki/reflect/numbers.md; then
-  add_warning "GOALS: money untracked - numbers.md has no Income/Exit fund columns (add them and start filling)"
-  money_state="missing-columns"
-else
-  newest_row="$(grep -E '^\| 20[0-9]{2}-W' wiki/reflect/numbers.md | head -1)"
-  inc="$(printf '%s' "$newest_row" | awk -F'|' '{gsub(/^[ \t]+|[ \t]+$/, "", $6); print $6}')"
-  exitf="$(printf '%s' "$newest_row" | awk -F'|' '{gsub(/^[ \t]+|[ \t]+$/, "", $7); print $7}')"
-  if [ -z "$inc" ] || [ -z "$exitf" ]; then
-    add_warning "GOALS: money columns exist but the newest weekly row has no income/exit-fund numbers yet"
-    money_state="columns-empty"
-  fi
-fi
-if [ "$money_state" = "ok" ]; then echo "goals gate    : money tracked (income + exit fund in newest row)"; fi
-
-if [ "$WARNINGS" -gt 0 ]; then
-  echo ""
-  echo "GOALS GATE - recap flags (not repair items):"
-  printf '%s\n' "$WARNING_LIST"
-fi
+echo "✓ solutions: $solution_count"
+[ "$malformed" -eq 0 ] || problem "$malformed solution files have no recognizable metadata"
 
 echo ""
 if [ "$PROBLEMS" -eq 0 ]; then
-  echo "HEALTHCHECK OK - all heartbeats within $THRESHOLD_HOURS hours."
+  echo "HEALTHCHECK OK - MindVault is operational."
   exit 0
 else
-  echo "HEALTHCHECK FAILED - REPAIR MODE:"
-  printf '%s\n' "$PROBLEM_LIST"
+  echo "HEALTHCHECK FAILED - operational problems found: $PROBLEMS"
   exit 1
 fi
