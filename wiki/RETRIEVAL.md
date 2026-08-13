@@ -12,6 +12,18 @@ When a request may depend on previous context:
 4. **Durable knowledge** — search solutions, decisions, research, project artifacts, and other preserved knowledge.
 5. **Archive/transcripts** — search raw history only when the answer cannot be reconstructed from the higher-value layers.
 
+## Local retrieval command
+
+The repository provides a lightweight deterministic first-pass search:
+
+```text
+bash scripts/search_context.sh "query" [limit] [--archive|--all]
+```
+
+Normal searches cover current state and high-value knowledge while deliberately excluding raw archives/transcripts. Use `--archive` or `--all` only when broader historical retrieval is justified.
+
+This is intentionally simple. It is a lexical retrieval layer, not semantic search. Mnemosyne remains responsible for personal memory, and a future semantic/ranked retriever should replace or sit above this command only if real usage demonstrates that lexical search is insufficient.
+
 ## Query by intent
 
 Retrieval should be driven by the user's actual request, not by a generic "read everything" operation.
