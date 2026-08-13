@@ -4,7 +4,7 @@ Reverse-chronological record of all vault operations.
 
 ## [2026-08-13 12:10] vault | Strengths read — wiki/reflect/strengths.md written
 
-User asked what they're naturally good at. AI read the record (conversation history + vault: sessions, decisions, validations) and wrote wiki/reflect/strengths.md — five repeated patterns (self-observation, requirement-sensing, truth-testing, reality-testing, decisive editing), a plain-terms translation, and an honest caveat. Marked as observation-from-behavior, NOT a numbers pattern report (revisit at 12+ weekly rows). User asked to push it to GitHub. Committed; push pending credentials.
+User asked what they're naturally good at. AI read the record (conversation history + vault: sessions, decisions, validations) and wrote wiki/reflect/strengths.md — five repeated patterns (self-observation, requirement-sensing, truth-testing, reality-testing, decisive editing), a plain-terms translation, and an honest caveat. Marked as observation-from-behavior, NOT a numbers pattern report (revisit at 12+ weekly rows). User asked to push it to GitHub. Auth: gh device login approved (code 9767-A1BE), gh auth setup-git, pushed — remote main == local (8aec25f). Done.
 
 ## [2026-08-12 14:45] vault | Goal audit applied — all 5 fixes
 
