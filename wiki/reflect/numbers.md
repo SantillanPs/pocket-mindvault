@@ -1,7 +1,13 @@
 # Weekly Numbers
 
-The mirror's raw material. One row per week, newest at the top. ~5 minutes at each check-in: eight numbers, one optional line. Derived from the daily micro-log (wiki/reflect/daily.md) — the check-in reads rows, it doesn't interrogate. The AI writes; the User answers.
+A compact derived view of longitudinal data. A row is created when a weekly snapshot is useful, not because a week ended.
 
-| Week | Weight (kg) | Sleep (avg h) | Spending (total) | Income (wk) | Exit fund | Good days (out of 7) | Screen (avg h/day) | Workout (sessions) | One line |
+Values come only from available evidence. Missing values stay blank, and denominators reflect the observations that actually exist.
+
+| Week | Weight (kg) | Sleep (avg h) | Spending (total) | Income (wk) | Exit fund | Good days | Screen (avg h/day) | Workout (sessions) | One line |
 |---|---|---|---|---|---|---|---|---|---|
 | 2026-W33 | | 8 (3/7 nights) | | | | | | 3 | 5 muscle-ups, 5×30s dead hangs; 50 pushups; 15 pushups + 5 muscle-ups |
+
+## Use
+
+Use this table for comparisons and trend analysis. Do not treat it as the source of truth when raw evidence is available; `daily.md` contains optional raw observations.
