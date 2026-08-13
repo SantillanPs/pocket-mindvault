@@ -1,25 +1,29 @@
-# Learn — Interest → Need → Thread → Real-World Proof
+# Learn — interest → need → thread → proof
 
-Method 4 of MindVault. It exists to turn useful interests into applied learning without making the User maintain a learning database.
+Learn is a capability of the AI, not a daily logging system.
 
-## The five rules
+## Method
 
-1. **Needs decide.** A thread is active only while attached to a real need — a concrete thing it's FOR. No live need → it can return to the shelf. No shame.
-2. **Capture selectively.** Not every curiosity deserves a record. Capture an interest when it is likely to matter later; otherwise let the conversation remain temporary. Only threads with live needs become active.
-3. **Progress = real-world proof.** The only thing that advances a thread is evidence the learning changed something done in the real world. Notes about learning don't count as progress by themselves.
-4. **Small evidence beats daily bookkeeping.** When the User mentions something they learned, did, or touched, the AI may file it if it materially helps track an active thread. There is no required daily entry and no catch-up ritual.
-5. **The AI tracks automatically.** Mnemosyne can hold lightweight thread context across sessions; the vault holds durable learning artifacts and meaningful thread state. The AI retrieves what is relevant rather than loading the whole learning area every time.
+1. **Notice the interest.** Most curiosity remains temporary.
+2. **Find the need.** An interest becomes an active thread only when it attaches to something the User actually needs to do.
+3. **Track only useful continuity.** Preserve the smallest state needed to resume the thread later.
+4. **Apply it.** Learning matters most when it changes something done in the real world.
+5. **Promote durable knowledge selectively.** Preserve research, discoveries, or validated lessons when losing them would hurt future work.
+
+## Persistence rules
+
+- No required daily learning entry.
+- No catch-up ritual for missing days.
+- No permanent record for every curiosity.
+- Mnemosyne may hold lightweight personal/thread context.
+- The vault holds durable learning artifacts and meaningful active thread state.
+- Temporary learning scaffolding can disappear when the task is finished.
 
 ## Files
 
-- `threads.md` — active threads that have a live need and meaningful continuity value.
-- `shelf.md` — optional curiosity shelf for interests the User explicitly wants to keep.
-- `daily.md` — optional evidence archive; it is not a required diary.
-
-## Cold start
-
-Missing days are irrelevant. Reopening an active thread means retrieving its current state and saying what moved, if anything.
+- `threads.md` — active learning threads with a live need and useful continuity.
+- Historical learning material belongs in the archive when it is worth retaining.
 
 ## Closing a thread
 
-A thread closes when its need is met or dropped. Record final proof only when that proof is useful later.
+Close a thread when its need is met, dropped, or no longer worth maintaining. Preserve final proof only when it is useful for future work.
