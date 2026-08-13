@@ -95,9 +95,9 @@ Reflect is an exception where structured historical data can be useful for longi
 
 ## Solve
 
-Use:
+Use the detailed Solve contract in `wiki/SOLVE.md`:
 
-problem → previous attempts → research → options → User choice → real-world test → outcome.
+problem → retrieve previous attempts → understand constraints → research when needed → options → User choice → execute → real-world result → preserve only what is worth keeping.
 
 Only promote a solution to durable knowledge when there is evidence it worked or the decision itself is worth preserving.
 
@@ -117,7 +117,9 @@ Use deterministic code for deterministic tasks whenever possible. The LLM should
 
 ## Retrieval
 
-Retrieve relevant information based on the current request. Search memory and durable knowledge before asking the User to repeat information. Do not treat "read the entire vault" as normal operation.
+Follow `wiki/RETRIEVAL.md` and `wiki/PI_INTEGRATION.md`.
+
+Use `scripts/search_context.sh` as the deterministic repository retrieval tool when previous durable context may matter. Mnemosyne remains the personal-memory layer. Do not read the entire vault by default.
 
 ## Git
 
