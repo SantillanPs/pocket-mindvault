@@ -1,7 +1,13 @@
-# Suggestion Log
+# Reflect experiments
 
-Every suggestion the mirror makes, and what happened with it. Checked at every check-in; the reports state follow-through plainly. No bets, no penalties — the truth, repeated.
+This is an optional record of **deliberate experiments** suggested from Reflect analysis.
 
-| Suggested (date) | Suggestion | Source | Tried? | Outcome | Evidence |
+Do not record every suggestion the AI makes. Record an experiment only when:
+
+- the User agrees to try it;
+- tracking the outcome could improve future decisions; and
+- the experiment has a clear enough expected outcome to evaluate.
+
+| Date | Experiment | Why | Tried? | Outcome | Evidence |
 |---|---|---|---|---|---|
-| 2026-08-12 | Start the OUT plan: this week run the 10-minute exit-plan session — name your rent target and your first step (if-then: at your next session open, read the OUT thread in HANDOFF first) | MindVault goal audit (workflow review, 2026-08-12) | | | |
+| 2026-08-12 | Start the OUT plan: run the 10-minute exit-plan session and define the rent target + first step | Goal audit suggested a concrete first action | | | |
